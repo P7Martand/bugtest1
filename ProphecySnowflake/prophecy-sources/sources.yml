@@ -1,0 +1,74 @@
+---
+version: 2
+sources:
+- name: "ROHIT.VARIANT_SCHEMA"
+  database: "ROHIT"
+  schema: "VARIANT_SCHEMA"
+  config:
+    enabled: true
+  tables:
+  - name: "VARIANT_ALL_TYPES"
+    description: "Comprehensive employee data encompassing personal details, employment\
+      \ status, and financial information, aiding in workforce analysis."
+    columns:
+    - name: "FIRST_NAME"
+      description: "The first name of the individual"
+      dataType:
+        type: "String"
+    - name: "LAST_NAME"
+      description: "The last name of the individual"
+      dataType:
+        type: "String"
+    - name: "AGE"
+      description: "The age of the individual"
+      dataType:
+        type: "Number"
+    - name: "MY_STRUCT_VAR"
+      description: "A variable structure that can hold different types of data related\
+        \ to the employee."
+      dataType:
+        type: "Variant"
+    - name: "EMAIL"
+      description: "Email address of the individual"
+      dataType:
+        type: "String"
+    - name: "PHONE_NUMBER"
+      description: "Contact number of the individual"
+      dataType:
+        type: "String"
+    - name: "ADDRESS"
+      description: "The residential address of the employee"
+      dataType:
+        type: "String"
+    - name: "JOIN_DATE"
+      description: "The date when the employee joined the organization"
+      dataType:
+        type: "String"
+    - name: "SALARY"
+      description: "The annual salary of the employee"
+      dataType:
+        type: "Number"
+    - name: "IS_ACTIVE"
+      description: "Indicates whether the employee is currently active in the organization"
+      dataType:
+        type: "Boolean"
+    - name: "DEPARTMENT"
+      description: "The department where the employee works"
+      dataType:
+        type: "String"
+    - name: "HIRE_DATE"
+      description: "The date when the employee was hired"
+      dataType:
+        type: "String"
+    - name: "LAST_LOGIN_TIME"
+      description: "The last time the user logged into the system"
+      dataType:
+        type: "String"
+    - name: "LOGIN_TIMESTAMP"
+      description: "Timestamp of the user's last login"
+      dataType:
+        type: "String"
+    - name: "HOURLY_RATE"
+      description: "The hourly wage rate of the employee"
+      dataType:
+        type: "Number"

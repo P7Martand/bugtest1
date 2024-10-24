@@ -1,0 +1,595 @@
+{
+  "id" : "Bigbirds",
+  "metainfo" : {
+    "label" : "Bigbirds",
+    "autoLayout" : false,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "Bigbirds##z68VFYUK" : {
+      "id" : "Bigbirds##z68VFYUK",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "Bigbirds",
+        "x" : 620,
+        "y" : 60,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT * \n\nFROM Join_1\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "tEwuC8HE",
+          "slug" : "Join_1"
+        } ],
+        "outputs" : [ {
+          "id" : "SkqKmBYX",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "VqSq6V5aQPXhfH760tbPX$$SVIiIyVe8X-bO2rYTYBpG" : {
+      "id" : "VqSq6V5aQPXhfH760tbPX$$SVIiIyVe8X-bO2rYTYBpG",
+      "component" : "Subgraph",
+      "metadata" : {
+        "label" : "Subgraph_1",
+        "slug" : "Subgraph_1",
+        "x" : 220,
+        "y" : 20,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "processes" : {
+        "SZ727dS6bXvULuBdaLy8T$$IiihjXfJquhIWaxS-KvBx" : {
+          "id" : "SZ727dS6bXvULuBdaLy8T$$IiihjXfJquhIWaxS-KvBx",
+          "component" : "Reformat",
+          "metadata" : {
+            "label" : "Reformat_1",
+            "slug" : "Reformat_1",
+            "x" : 420,
+            "y" : 20,
+            "phase" : 0,
+            "macroDependencies" : [ ],
+            "comment" : "Streamlines data by selecting key validity timestamps for further analysis.",
+            "autoUpdateComment" : true
+          },
+          "properties" : {
+            "columnsSelector" : [ "c27xA1O0TLdnS4ed1Fw6h$$tuohJFGDZ-YL6ibPmCRN2##DBT_VALID_TO", "c27xA1O0TLdnS4ed1Fw6h$$tuohJFGDZ-YL6ibPmCRN2##DBT_UPDATED_AT", "c27xA1O0TLdnS4ed1Fw6h$$tuohJFGDZ-YL6ibPmCRN2##DBT_VALID_FROM" ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "DBT_VALID_TO"
+              },
+              "alias" : "DBT_VALID_TO"
+            }, {
+              "expression" : {
+                "expression" : "DBT_UPDATED_AT"
+              },
+              "alias" : "DBT_UPDATED_AT"
+            }, {
+              "expression" : {
+                "expression" : "DBT_VALID_FROM"
+              },
+              "alias" : "DBT_VALID_FROM"
+            } ]
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "c27xA1O0TLdnS4ed1Fw6h$$tuohJFGDZ-YL6ibPmCRN2",
+              "schema" : {
+                "entityType" : "",
+                "providerType" : "Snowflake",
+                "fields" : [ {
+                  "name" : "DBT_UPDATED_AT",
+                  "dataType" : {
+                    "type" : "Variant"
+                  }
+                }, {
+                  "name" : "DBT_VALID_FROM",
+                  "dataType" : {
+                    "type" : "Variant"
+                  }
+                }, {
+                  "name" : "DBT_VALID_TO",
+                  "dataType" : {
+                    "type" : "Variant"
+                  }
+                } ]
+              },
+              "slug" : "in0"
+            } ],
+            "outputs" : [ {
+              "id" : "WXh74PeDGrUqdGjf5V5Kh$$OFcxG2I5ffQd5c5LXcT0t",
+              "schema" : {
+                "entityType" : "",
+                "providerType" : "Snowflake",
+                "fields" : [ {
+                  "name" : "DBT_VALID_TO",
+                  "dataType" : {
+                    "type" : "Variant"
+                  }
+                }, {
+                  "name" : "DBT_UPDATED_AT",
+                  "dataType" : {
+                    "type" : "Variant"
+                  }
+                }, {
+                  "name" : "DBT_VALID_FROM",
+                  "dataType" : {
+                    "type" : "Variant"
+                  }
+                } ]
+              },
+              "slug" : "out"
+            } ],
+            "isCustomOutputSchema" : false,
+            "autoUpdateOnRun" : false
+          }
+        },
+        "qqIX493vVOGyN1_1Q5ky9$$bZ_c_P9lTv5Xm4piQdUUk" : {
+          "id" : "qqIX493vVOGyN1_1Q5ky9$$bZ_c_P9lTv5Xm4piQdUUk",
+          "component" : "FlattenSchema",
+          "metadata" : {
+            "label" : "FlattenSchema_1",
+            "slug" : "FlattenSchema_1",
+            "x" : 20,
+            "y" : 20,
+            "phase" : 0,
+            "macroDependencies" : [ ],
+            "comment" : "Simplifies the structure of bird data for easier analysis.",
+            "autoUpdateComment" : true
+          },
+          "properties" : {
+            "columnsSelector" : [ ],
+            "flattenExpressions" : [ ],
+            "expressions" : [ ]
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "ydNSPLLqlM3xFopBu9L-l$$Gg6wU2G5KoTc3Y3ACCfEJ",
+              "schema" : {
+                "entityType" : "",
+                "providerType" : "Snowflake",
+                "fields" : [ {
+                  "name" : "DBT_VALID_TO",
+                  "dataType" : {
+                    "type" : "Variant"
+                  }
+                }, {
+                  "name" : "DBT_UPDATED_AT",
+                  "dataType" : {
+                    "type" : "Variant"
+                  }
+                }, {
+                  "name" : "DBT_VALID_FROM",
+                  "dataType" : {
+                    "type" : "Variant"
+                  }
+                }, {
+                  "name" : "DBT_UPDATED_AT_1",
+                  "dataType" : {
+                    "type" : "Variant"
+                  }
+                }, {
+                  "name" : "DBT_VALID_FROM_1",
+                  "dataType" : {
+                    "type" : "Variant"
+                  }
+                }, {
+                  "name" : "DBT_VALID_TO_1",
+                  "dataType" : {
+                    "type" : "Variant"
+                  }
+                } ]
+              },
+              "slug" : "in0"
+            } ],
+            "outputs" : [ {
+              "id" : "B5GxVyAA21iABj1fXOP38$$di9Q9_WsG2P4rMVn6tD4Q",
+              "schema" : {
+                "entityType" : "",
+                "providerType" : "Snowflake",
+                "fields" : [ {
+                  "name" : "DBT_VALID_TO",
+                  "dataType" : {
+                    "type" : "Variant"
+                  }
+                }, {
+                  "name" : "DBT_UPDATED_AT",
+                  "dataType" : {
+                    "type" : "Variant"
+                  }
+                }, {
+                  "name" : "DBT_VALID_FROM",
+                  "dataType" : {
+                    "type" : "Variant"
+                  }
+                }, {
+                  "name" : "DBT_UPDATED_AT_1",
+                  "dataType" : {
+                    "type" : "Variant"
+                  }
+                }, {
+                  "name" : "DBT_VALID_FROM_1",
+                  "dataType" : {
+                    "type" : "Variant"
+                  }
+                }, {
+                  "name" : "DBT_VALID_TO_1",
+                  "dataType" : {
+                    "type" : "Variant"
+                  }
+                } ]
+              },
+              "slug" : "out"
+            } ],
+            "isCustomOutputSchema" : false,
+            "autoUpdateOnRun" : false
+          }
+        },
+        "BxHa91i0Hash6SRon73o8$$Hig6LciNs8YUkMhQqzmvp" : {
+          "id" : "BxHa91i0Hash6SRon73o8$$Hig6LciNs8YUkMhQqzmvp",
+          "component" : "SQLStatement",
+          "metadata" : {
+            "label" : "SQLStatement_1",
+            "slug" : "SQLStatement_1",
+            "x" : 620,
+            "y" : 20,
+            "phase" : 0,
+            "macroDependencies" : [ ],
+            "comment" : "Retrieves data from the set of patients with chronic conditions born before 2000.",
+            "autoUpdateComment" : true
+          },
+          "properties" : {
+            "fileTabs" : [ {
+              "path" : "out",
+              "id" : "out",
+              "language" : "sql",
+              "content" : "SELECT * from Reformat_1"
+            } ]
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "-2qDinrOj0UXO7aumT3kF$$JlafuBeJ745FsGTe8sRfC",
+              "schema" : {
+                "entityType" : "",
+                "providerType" : "Snowflake",
+                "fields" : [ {
+                  "name" : "DBT_VALID_TO",
+                  "dataType" : {
+                    "type" : "Variant"
+                  }
+                }, {
+                  "name" : "DBT_UPDATED_AT",
+                  "dataType" : {
+                    "type" : "Variant"
+                  }
+                }, {
+                  "name" : "DBT_VALID_FROM",
+                  "dataType" : {
+                    "type" : "Variant"
+                  }
+                } ]
+              },
+              "slug" : "Reformat_1"
+            } ],
+            "outputs" : [ {
+              "id" : "lNCB7DLy1ltKNeDhuotov$$f3CZ7PZ69R6De3EvFmK4g",
+              "schema" : {
+                "entityType" : "",
+                "providerType" : "Snowflake",
+                "fields" : [ {
+                  "name" : "DBT_VALID_TO",
+                  "dataType" : {
+                    "type" : "Variant"
+                  }
+                }, {
+                  "name" : "DBT_UPDATED_AT",
+                  "dataType" : {
+                    "type" : "Variant"
+                  }
+                }, {
+                  "name" : "DBT_VALID_FROM",
+                  "dataType" : {
+                    "type" : "Variant"
+                  }
+                } ]
+              },
+              "slug" : "out"
+            } ],
+            "isCustomOutputSchema" : false,
+            "autoUpdateOnRun" : false
+          }
+        },
+        "I0hF0t6dXFGl03al974yZ$$CrXRGFBPoFX_yLyQ_xx1k" : {
+          "id" : "I0hF0t6dXFGl03al974yZ$$CrXRGFBPoFX_yLyQ_xx1k",
+          "component" : "Deduplicate",
+          "metadata" : {
+            "label" : "Deduplicate_1",
+            "slug" : "Deduplicate_1",
+            "x" : 220,
+            "y" : 20,
+            "phase" : 0,
+            "macroDependencies" : [ ],
+            "comment" : "Removes duplicate records to ensure data accuracy and integrity.",
+            "autoUpdateComment" : true
+          },
+          "properties" : {
+            "dedupColumns" : [ {
+              "expression" : {
+                "expression" : "DBT_UPDATED_AT"
+              },
+              "alias" : "DBT_UPDATED_AT"
+            }, {
+              "expression" : {
+                "expression" : "DBT_VALID_FROM"
+              },
+              "alias" : "DBT_VALID_FROM"
+            }, {
+              "expression" : {
+                "expression" : "DBT_VALID_TO"
+              },
+              "alias" : "DBT_VALID_TO"
+            } ],
+            "dedupType" : "distinct",
+            "columnsSelector" : [ "4vBCS4HIjIOu_dn-1SARI$$fDn9622MmJui3nh47mY6x##DBT_UPDATED_AT", "4vBCS4HIjIOu_dn-1SARI$$fDn9622MmJui3nh47mY6x##DBT_VALID_FROM", "4vBCS4HIjIOu_dn-1SARI$$fDn9622MmJui3nh47mY6x##DBT_VALID_TO" ],
+            "orders" : [ ],
+            "useOrderBy" : false
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "4vBCS4HIjIOu_dn-1SARI$$fDn9622MmJui3nh47mY6x",
+              "schema" : {
+                "entityType" : "",
+                "providerType" : "Snowflake",
+                "fields" : [ {
+                  "name" : "DBT_VALID_TO",
+                  "dataType" : {
+                    "type" : "Variant"
+                  }
+                }, {
+                  "name" : "DBT_UPDATED_AT",
+                  "dataType" : {
+                    "type" : "Variant"
+                  }
+                }, {
+                  "name" : "DBT_VALID_FROM",
+                  "dataType" : {
+                    "type" : "Variant"
+                  }
+                }, {
+                  "name" : "DBT_UPDATED_AT_1",
+                  "dataType" : {
+                    "type" : "Variant"
+                  }
+                }, {
+                  "name" : "DBT_VALID_FROM_1",
+                  "dataType" : {
+                    "type" : "Variant"
+                  }
+                }, {
+                  "name" : "DBT_VALID_TO_1",
+                  "dataType" : {
+                    "type" : "Variant"
+                  }
+                } ]
+              },
+              "slug" : "in0"
+            } ],
+            "outputs" : [ {
+              "id" : "c0s5rPzUAKuGv4BzGMeX6$$0C3T2gkw1nS98psH8EAM2",
+              "schema" : {
+                "entityType" : "",
+                "providerType" : "Snowflake",
+                "fields" : [ {
+                  "name" : "DBT_UPDATED_AT",
+                  "dataType" : {
+                    "type" : "Variant"
+                  }
+                }, {
+                  "name" : "DBT_VALID_FROM",
+                  "dataType" : {
+                    "type" : "Variant"
+                  }
+                }, {
+                  "name" : "DBT_VALID_TO",
+                  "dataType" : {
+                    "type" : "Variant"
+                  }
+                } ]
+              },
+              "slug" : "out"
+            } ],
+            "isCustomOutputSchema" : false,
+            "autoUpdateOnRun" : false
+          }
+        }
+      },
+      "connections" : [ {
+        "id" : "JweDE4gDojnpY8kRFkssC",
+        "source" : "qqIX493vVOGyN1_1Q5ky9$$bZ_c_P9lTv5Xm4piQdUUk",
+        "sourcePort" : "B5GxVyAA21iABj1fXOP38$$di9Q9_WsG2P4rMVn6tD4Q",
+        "target" : "I0hF0t6dXFGl03al974yZ$$CrXRGFBPoFX_yLyQ_xx1k",
+        "targetPort" : "4vBCS4HIjIOu_dn-1SARI$$fDn9622MmJui3nh47mY6x"
+      }, {
+        "id" : "OK1qB_T-wxMEXnNPVVMgi",
+        "source" : "I0hF0t6dXFGl03al974yZ$$CrXRGFBPoFX_yLyQ_xx1k",
+        "sourcePort" : "c0s5rPzUAKuGv4BzGMeX6$$0C3T2gkw1nS98psH8EAM2",
+        "target" : "SZ727dS6bXvULuBdaLy8T$$IiihjXfJquhIWaxS-KvBx",
+        "targetPort" : "c27xA1O0TLdnS4ed1Fw6h$$tuohJFGDZ-YL6ibPmCRN2"
+      }, {
+        "id" : "ijZhO5d6dXfPUYFUdoCYF",
+        "source" : "SZ727dS6bXvULuBdaLy8T$$IiihjXfJquhIWaxS-KvBx",
+        "sourcePort" : "WXh74PeDGrUqdGjf5V5Kh$$OFcxG2I5ffQd5c5LXcT0t",
+        "target" : "BxHa91i0Hash6SRon73o8$$Hig6LciNs8YUkMhQqzmvp",
+        "targetPort" : "-2qDinrOj0UXO7aumT3kF$$JlafuBeJ745FsGTe8sRfC"
+      }, {
+        "id" : "C-Me1rEqTLFAnyamXJdfZ",
+        "source" : "BxHa91i0Hash6SRon73o8$$Hig6LciNs8YUkMhQqzmvp",
+        "sourcePort" : "lNCB7DLy1ltKNeDhuotov$$f3CZ7PZ69R6De3EvFmK4g",
+        "target" : "VqSq6V5aQPXhfH760tbPX$$SVIiIyVe8X-bO2rYTYBpG",
+        "targetPort" : "h1e6yC9Q7_vJ7htIxSHjS$$9V5IwdPMpn-ZqrV-KkBLV"
+      }, {
+        "id" : "lonTApxWLRSWvAuheCe_C",
+        "source" : "VqSq6V5aQPXhfH760tbPX$$SVIiIyVe8X-bO2rYTYBpG",
+        "sourcePort" : "2aNIVTo7SLDkwsKPp1NeV$$00JrZ2k27kDfco8KB8SPc",
+        "target" : "qqIX493vVOGyN1_1Q5ky9$$bZ_c_P9lTv5Xm4piQdUUk",
+        "targetPort" : "ydNSPLLqlM3xFopBu9L-l$$Gg6wU2G5KoTc3Y3ACCfEJ"
+      } ],
+      "ports" : {
+        "inputs" : [ {
+          "id" : "2aNIVTo7SLDkwsKPp1NeV$$00JrZ2k27kDfco8KB8SPc",
+          "slug" : "Animals"
+        } ],
+        "outputs" : [ {
+          "id" : "h1e6yC9Q7_vJ7htIxSHjS$$9V5IwdPMpn-ZqrV-KkBLV",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : { },
+      "canonical" : false
+    },
+    "LjTXL2UAwTv5d90IHwuuS" : {
+      "id" : "LjTXL2UAwTv5d90IHwuuS",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "Animals",
+        "slug" : "Animals",
+        "x" : -80,
+        "y" : 120,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "Animals",
+          "sourceType" : "Model",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "rMluf4TDLc5KOpLBXF1B4",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "1qNLTqI_EBQIWr4C-VYb2$$lfmFZ-XxMeNAy_wUQLIqs" : {
+      "id" : "1qNLTqI_EBQIWr4C-VYb2$$lfmFZ-XxMeNAy_wUQLIqs",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "Join_1",
+        "slug" : "Join_1",
+        "x" : 460,
+        "y" : 120,
+        "phase" : 0,
+        "macroDependencies" : [ ],
+        "comment" : "Combines data on animal records with their validity periods for comprehensive tracking.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "in1",
+          "expression" : {
+            "expression" : "in1.DBT_UPDATED_AT_1 = in0.DBT_UPDATED_AT"
+          },
+          "joinType" : "inner"
+        } ],
+        "allowSelection" : false,
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "in0.DBT_VALID_TO"
+          },
+          "alias" : "DBT_VALID_TO"
+        }, {
+          "expression" : {
+            "expression" : "in0.DBT_UPDATED_AT"
+          },
+          "alias" : "DBT_UPDATED_AT"
+        }, {
+          "expression" : {
+            "expression" : "in0.DBT_VALID_FROM"
+          },
+          "alias" : "DBT_VALID_FROM"
+        }, {
+          "expression" : {
+            "expression" : "in1.DBT_UPDATED_AT_1"
+          },
+          "alias" : "DBT_UPDATED_AT_1"
+        }, {
+          "expression" : {
+            "expression" : "in1.DBT_VALID_FROM_1"
+          },
+          "alias" : "DBT_VALID_FROM_1"
+        }, {
+          "expression" : {
+            "expression" : "in1.DBT_VALID_TO_1"
+          },
+          "alias" : "DBT_VALID_TO_1"
+        } ],
+        "activeTab" : "conditions",
+        "columnsSelector" : [ "e7ixj10ifvMqkK-jTnsvT$$50wps0nPMsUhJpbEAnQ5C##in1", "e7ixj10ifvMqkK-jTnsvT$$50wps0nPMsUhJpbEAnQ5C##in1.DBT_UPDATED_AT_1", "ABoPcrq_knyPS2JdlbaZ8$$ksUoQqwOym_CoNtMo_hK3##in0", "ABoPcrq_knyPS2JdlbaZ8$$ksUoQqwOym_CoNtMo_hK3##in0.DBT_UPDATED_AT", "ABoPcrq_knyPS2JdlbaZ8$$ksUoQqwOym_CoNtMo_hK3##in0", "ABoPcrq_knyPS2JdlbaZ8$$ksUoQqwOym_CoNtMo_hK3##in0.DBT_VALID_TO", "ABoPcrq_knyPS2JdlbaZ8$$ksUoQqwOym_CoNtMo_hK3##in0.DBT_UPDATED_AT", "ABoPcrq_knyPS2JdlbaZ8$$ksUoQqwOym_CoNtMo_hK3##in0.DBT_VALID_FROM", "e7ixj10ifvMqkK-jTnsvT$$50wps0nPMsUhJpbEAnQ5C##in1", "e7ixj10ifvMqkK-jTnsvT$$50wps0nPMsUhJpbEAnQ5C##in1.DBT_UPDATED_AT_1", "e7ixj10ifvMqkK-jTnsvT$$50wps0nPMsUhJpbEAnQ5C##in1.DBT_VALID_FROM_1", "e7ixj10ifvMqkK-jTnsvT$$50wps0nPMsUhJpbEAnQ5C##in1.DBT_VALID_TO_1" ],
+        "headAlias" : "in0"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "ABoPcrq_knyPS2JdlbaZ8$$ksUoQqwOym_CoNtMo_hK3",
+          "slug" : "in0"
+        }, {
+          "id" : "e7ixj10ifvMqkK-jTnsvT$$50wps0nPMsUhJpbEAnQ5C",
+          "slug" : "in1"
+        } ],
+        "outputs" : [ {
+          "id" : "W_H0rhjMwvqanzWqf9kUv$$FJMKPphMsPsNMtW3mQ5fA",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "2dCQn-tmgD5Y-mINHQ8I4",
+    "source" : "LjTXL2UAwTv5d90IHwuuS",
+    "sourcePort" : "rMluf4TDLc5KOpLBXF1B4",
+    "target" : "VqSq6V5aQPXhfH760tbPX$$SVIiIyVe8X-bO2rYTYBpG",
+    "targetPort" : "2aNIVTo7SLDkwsKPp1NeV$$00JrZ2k27kDfco8KB8SPc"
+  }, {
+    "id" : "QjlFyTg_3doEo5vTm724g$$g08iPS04IvELAWgORDA46",
+    "source" : "1qNLTqI_EBQIWr4C-VYb2$$lfmFZ-XxMeNAy_wUQLIqs",
+    "sourcePort" : "W_H0rhjMwvqanzWqf9kUv$$FJMKPphMsPsNMtW3mQ5fA",
+    "target" : "Bigbirds##z68VFYUK",
+    "targetPort" : "tEwuC8HE"
+  }, {
+    "id" : "ercZhCaW16JUBfy6GdQ1V",
+    "source" : "VqSq6V5aQPXhfH760tbPX$$SVIiIyVe8X-bO2rYTYBpG",
+    "sourcePort" : "h1e6yC9Q7_vJ7htIxSHjS$$9V5IwdPMpn-ZqrV-KkBLV",
+    "target" : "1qNLTqI_EBQIWr4C-VYb2$$lfmFZ-XxMeNAy_wUQLIqs",
+    "targetPort" : "ABoPcrq_knyPS2JdlbaZ8$$ksUoQqwOym_CoNtMo_hK3"
+  }, {
+    "id" : "C94U2b2GiedoXdwLgnzZ0",
+    "source" : "LjTXL2UAwTv5d90IHwuuS",
+    "sourcePort" : "rMluf4TDLc5KOpLBXF1B4",
+    "target" : "1qNLTqI_EBQIWr4C-VYb2$$lfmFZ-XxMeNAy_wUQLIqs",
+    "targetPort" : "e7ixj10ifvMqkK-jTnsvT$$50wps0nPMsUhJpbEAnQ5C"
+  } ],
+  "component" : "Model"
+}

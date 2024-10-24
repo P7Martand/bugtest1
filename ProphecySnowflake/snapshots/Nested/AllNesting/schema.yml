@@ -1,0 +1,63 @@
+---
+version: 2
+snapshots:
+- name: "birds"
+  columns:
+  - name: "ADDRESS"
+    dataType:
+      type: "String"
+  - name: "DBT_VALID_TO"
+    dataType:
+      type: "Variant"
+  - name: "LAST_LOGIN_TIME"
+    dataType:
+      type: "String"
+  - name: "FIRST_NAME"
+    dataType:
+      type: "String"
+  - name: "LAST_NAME"
+    dataType:
+      type: "String"
+  - name: "HIRE_DATE"
+    dataType:
+      type: "String"
+  - name: "MY_STRUCT_VAR"
+    dataType:
+      type: "Variant"
+  - name: "AGE"
+    dataType:
+      type: "Number"
+  - name: "EMAIL"
+    dataType:
+      type: "String"
+  - name: "SALARY"
+    dataType:
+      type: "Number"
+  - name: "DBT_UPDATED_AT"
+    dataType:
+      type: "Variant"
+  - name: "HOURLY_RATE"
+    dataType:
+      type: "Number"
+  - name: "PHONE_NUMBER"
+    dataType:
+      type: "String"
+  - name: "LOGIN_TIMESTAMP"
+    dataType:
+      type: "String"
+  - name: "IS_ACTIVE"
+    dataType:
+      type: "Boolean"
+  - name: "JOIN_DATE"
+    dataType:
+      type: "String"
+  - name: "DBT_VALID_FROM"
+    dataType:
+      type: "Variant"
+  - name: "DBT_SCD_ID"
+    dataType:
+      type: "String"
+  - name: "DEPARTMENT"
+    dataType:
+      type: "String"
+  tests: []

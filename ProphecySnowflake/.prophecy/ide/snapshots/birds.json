@@ -1,0 +1,95 @@
+{
+  "id" : "birds",
+  "metainfo" : {
+    "label" : "birds",
+    "autoLayout" : false,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "strategy" : "\"timestamp\"",
+        "updated_at" : "\"MY_STRUCT_VAR\"",
+        "target_schema" : "\"qa_schema\"",
+        "unique_key" : "\"LAST_LOGIN_TIME\"",
+        "type" : "SnapshotConfig"
+      }
+    },
+    "version" : 0
+  },
+  "processes" : {
+    "birds##GBRBe5N6" : {
+      "id" : "birds##GBRBe5N6",
+      "component" : "TargetSnapshot",
+      "metadata" : {
+        "label" : "birds",
+        "x" : 20,
+        "y" : 20,
+        "phase" : 0,
+        "macroDependencies" : [ ],
+        "comment" : "Retrieves all available bird types for comprehensive analysis.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT * \n\nFROM VARIANT_ALL_TYPES\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "nhU412k2",
+          "slug" : "VARIANT_ALL_TYPES"
+        } ],
+        "outputs" : [ {
+          "id" : "DYLaxqme",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "PUQM50vByBV2aR0mjSBCj" : {
+      "id" : "PUQM50vByBV2aR0mjSBCj",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "VARIANT_ALL_TYPES",
+        "slug" : "VARIANT_ALL_TYPES",
+        "x" : -720,
+        "y" : -280,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "VARIANT_ALL_TYPES",
+          "sourceType" : "Source",
+          "sourceName" : "ROHIT.VARIANT_SCHEMA",
+          "alias" : "",
+          "additionalProperties" : null
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "BWatBRMAt_V1oRBQPeDGT",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "8fjx-hMRW9IWXzIF0yAjX",
+    "source" : "PUQM50vByBV2aR0mjSBCj",
+    "sourcePort" : "BWatBRMAt_V1oRBQPeDGT",
+    "target" : "birds##GBRBe5N6",
+    "targetPort" : "nhU412k2"
+  } ],
+  "component" : "Snapshot"
+}
