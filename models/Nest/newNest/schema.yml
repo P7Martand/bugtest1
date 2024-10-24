@@ -1,0 +1,21 @@
+---
+version: 2
+models:
+- name: "DeeperModel"
+  columns:
+  - name: "dbt_valid_to"
+    dataType:
+      type: "Float"
+  - name: "dbt_updated_at"
+    dataType:
+      type: "Float"
+  - name: "newdbt_value"
+    dataType:
+      type: "Float"
+  - name: "dbt_valid_from"
+    dataType:
+      type: "Float"
+  - name: "dbt_scd_id"
+    dataType:
+      type: "String"
+  tests: []

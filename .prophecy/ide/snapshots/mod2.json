@@ -1,0 +1,95 @@
+{
+  "id" : "mod2",
+  "metainfo" : {
+    "label" : "mod2",
+    "autoLayout" : false,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "strategy" : "'timestamp'",
+        "check_cols" : [ ],
+        "updated_at" : "\"c_double\"",
+        "target_schema" : "\"qa_db_warehouse\"",
+        "unique_key" : "\"c_array\"",
+        "type" : "SnapshotConfig"
+      }
+    },
+    "version" : 0
+  },
+  "processes" : {
+    "mod2##cywDg1IR" : {
+      "id" : "mod2##cywDg1IR",
+      "component" : "TargetSnapshot",
+      "metadata" : {
+        "label" : "mod2",
+        "x" : 20,
+        "y" : 20,
+        "phase" : 0,
+        "macroDependencies" : [ ],
+        "comment" : "Retrieves all records from a comprehensive data table for analysis.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT * \n\nFROM all_type_table_default\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "TrZD5OCj",
+          "slug" : "all_type_table_default"
+        } ],
+        "outputs" : [ {
+          "id" : "objBWV8q",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "ZG30zsz-36FQVNSy1HGei" : {
+      "id" : "ZG30zsz-36FQVNSy1HGei",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "all_type_table_default",
+        "slug" : "all_type_table_default",
+        "x" : -720,
+        "y" : -280,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "all_type_table_default",
+          "sourceType" : "Source",
+          "sourceName" : "hive_metastore.qa_db_warehouse",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "dJT1nB7jescQnSfcKUG5M",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "BRZpE0rNGa9XFF26UZOFT",
+    "source" : "ZG30zsz-36FQVNSy1HGei",
+    "sourcePort" : "dJT1nB7jescQnSfcKUG5M",
+    "target" : "mod2##cywDg1IR",
+    "targetPort" : "TrZD5OCj"
+  } ],
+  "component" : "Snapshot"
+}

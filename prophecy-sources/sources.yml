@@ -1,0 +1,174 @@
+---
+version: 2
+sources:
+- name: "hive_metastore.qa_db_warehouse"
+  database: "hive_metastore"
+  schema: "qa_db_warehouse"
+  config:
+    enabled: true
+  tables:
+  - name: "all_type_table_default"
+    description: "Comprehensive dataset capturing various data types, enabling diverse\
+      \ analytical capabilities across multiple dimensions."
+    columns:
+    - name: "c_tinyint"
+      description: "A small integer value representing a specific attribute."
+      dataType:
+        type: "TinyInt"
+    - name: "c_smallint"
+      description: "A slightly larger integer value used for various metrics."
+      dataType:
+        type: "SmallInt"
+    - name: "c_int"
+      description: "A standard integer value representing a key measurement."
+      dataType:
+        type: "Integer"
+    - name: "c_bigint"
+      description: "A large integer value for significant numerical data."
+      dataType:
+        type: "Bigint"
+    - name: "c_float"
+      description: "A single-precision floating-point number for approximate values."
+      dataType:
+        type: "Float"
+    - name: "c_double"
+      description: "A double-precision floating-point number for high-accuracy calculations."
+      dataType:
+        type: "Double"
+    - name: "c_string"
+      description: "A text field for storing string data"
+      dataType:
+        type: "String"
+    - name: "c_boolean"
+      description: "A flag indicating a true or false condition"
+      dataType:
+        type: "Boolean"
+    - name: "c_date"
+      description: "A date field representing a specific calendar date"
+      dataType:
+        type: "Date"
+    - name: "c_timestamp"
+      description: "Timestamp indicating the specific moment of an event"
+      dataType:
+        type: "Timestamp"
+    - name: "c_binary"
+      description: "Binary data representing raw information"
+      dataType:
+        type: "Binary"
+    - name: "c_decimal"
+      description: "Decimal value for precise numerical representation"
+      dataType:
+        type: "Decimal"
+    - name: "c_array"
+      description: "An array of string values representing various items."
+      dataType:
+        type: "Array"
+        dataType:
+          type: "String"
+    - name: "c_array_struct"
+      description: "An array of structured data containing details about cities and\
+        \ their attributes."
+      dataType:
+        type: "Array"
+        dataType:
+          type: "Struct"
+          fields:
+          - name: "city"
+            dataType:
+              type: "String"
+            description: "The name of the city within the structured data array."
+          - name: "state"
+            dataType:
+              type: "String"
+            description: "State associated with the location in the array structure"
+          - name: "pin"
+            dataType:
+              type: "Bigint"
+            description: "Postal code linked to the location in the array structure"
+          - name: "start_date"
+            dataType:
+              type: "Date"
+            description: "Start date indicating when the location became available"
+          - name: "is_available"
+            dataType:
+              type: "Boolean"
+            description: "Indicates the availability status of the property"
+          - name: "yearlyrates"
+            dataType:
+              type: "Array"
+              dataType:
+                type: "Integer"
+            description: "Array of yearly rates associated with the property"
+          - name: "roomsizes"
+            dataType:
+              type: "Struct"
+              fields:
+              - name: "r_name"
+                dataType:
+                  type: "String"
+                description: "Name of the room type available in the property"
+              - name: "size"
+                dataType:
+                  type: "Integer"
+                description: "Size of the room in specified units"
+            description: "Details about the sizes of rooms available in the property"
+    - name: "c_map"
+      description: "A collection of key-value pairs related to the property"
+      dataType:
+        type: "Map"
+        keyType:
+          type: "String"
+        valueType:
+          type: "Integer"
+    - name: "c_struct"
+      description: "Structured data containing detailed information about a location."
+      dataType:
+        type: "Struct"
+        fields:
+        - name: "city"
+          dataType:
+            type: "String"
+          description: "The city associated with the structured location data."
+        - name: "state"
+          dataType:
+            type: "String"
+          description: "The state associated with the structured location data."
+        - name: "pin"
+          dataType:
+            type: "Bigint"
+          description: "Postal code associated with the location"
+        - name: "start_date"
+          dataType:
+            type: "Date"
+          description: "Date when the property becomes available"
+        - name: "is_available"
+          dataType:
+            type: "Boolean"
+          description: "Indicates whether the property is currently available"
+        - name: "yearlyrates"
+          dataType:
+            type: "Array"
+            dataType:
+              type: "Integer"
+          description: "Annual rates associated with the property"
+        - name: "roomsizes"
+          dataType:
+            type: "Struct"
+            fields:
+            - name: "r_name"
+              dataType:
+                type: "String"
+              description: "Name of the room type available in the property"
+            - name: "size"
+              dataType:
+                type: "Integer"
+              description: "Size of the room in the structure"
+          description: "Details of the room sizes available in the property"
+    - name: "p_string"
+      description: "A string parameter for additional information"
+      dataType:
+        type: "String"
+    - name: "p_int"
+      description: "An integer parameter for additional information"
+      dataType:
+        type: "Integer"

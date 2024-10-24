@@ -1,0 +1,1233 @@
+name: dbt_IssueFixCheck_Databricks
+description: ''
+version: 0.0.1
+author: abhisheks+e2etests@prophecy.io
+language: sql
+buildSystem: ''
+buildSystemDetails: null
+pipelines: {}
+datasets: {}
+templates: {}
+jobs:
+  jobs/jobCheck:
+    name: jobCheck
+    description: ''
+    fabricUID: 7
+    scheduler:
+      Databricks: {}
+    cloudProvider: null
+    jobSize: null
+    scheduleCron: 0 0 0 1 1 ? *
+    timeout: null
+    alerting:
+      emails: ''
+      onStart: false
+      onSuccess: false
+      onFailure: false
+    pipelines: []
+    jobClusterMode:
+      clusterMode:
+        Single: {}
+      clusterId: null
+    enabled: null
+    createdAt: '2024-10-24 11:27:21'
+    author: abhisheks+e2etests@prophecy.io
+    models: []
+    sqlProjects: []
+gemContainer:
+  languageVersion: ''
+  gemLibsVersion: ''
+  gems: {}
+  dependencies: null
+functions:
+  author: null
+  createdAt: '2024-10-24 08:34:20'
+  udfs: {}
+  udafs: {}
+  expressions: {}
+  airflowFunctions: {}
+  businessRules: {}
+subgraphs: {}
+sqlModels:
+  .prophecy/metadata/sqlmodels/DeeperModel:
+    name: DeeperModel
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: dbt_updated_at
+        dataType:
+          type: Float
+      - name: dbt_scd_id
+        dataType:
+          type: String
+      - name: dbt_valid_from
+        dataType:
+          type: Float
+      - name: dbt_valid_to
+        dataType:
+          type: Float
+      - name: newdbt_value
+        dataType:
+          type: Float
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/Nest/newNest/DeeperModel.sql
+    - .prophecy/ide/models/DeeperModel.json
+    - models/Nest/newNest/schema.yml
+    sqlDependencies:
+      models: []
+      datasets: []
+      seeds: []
+      sources: []
+      snapshots: []
+    createdAt: '2024-10-24 09:02:53'
+  .prophecy/metadata/sqlmodels/NestModel:
+    name: NestModel
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: dbt_updated_at
+        dataType:
+          type: Float
+      - name: dbt_scd_id
+        dataType:
+          type: String
+      - name: dbt_valid_from
+        dataType:
+          type: Float
+      - name: dbt_valid_to
+        dataType:
+          type: Float
+      - name: newdbt_value
+        dataType:
+          type: Float
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/Nest/NestModel.sql
+    - .prophecy/ide/models/NestModel.json
+    - models/Nest/schema.yml
+    sqlDependencies:
+      models: []
+      datasets: []
+      seeds: []
+      sources: []
+      snapshots: []
+    createdAt: '2024-10-24 09:02:22'
+sqlSnapshots:
+  .prophecy/metadata/sqlsnapshots/mod6:
+    name: mod6
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: c_tinyint
+        dataType:
+          type: TinyInt
+      - name: c_smallint
+        dataType:
+          type: SmallInt
+      - name: c_int
+        dataType:
+          type: Integer
+      - name: c_bigint
+        dataType:
+          type: Bigint
+      - name: c_float
+        dataType:
+          type: Float
+      - name: c_double
+        dataType:
+          type: Double
+      - name: c_string
+        dataType:
+          type: String
+      - name: c_boolean
+        dataType:
+          type: Boolean
+      - name: c_date
+        dataType:
+          type: Date
+      - name: c_timestamp
+        dataType:
+          type: Timestamp
+      - name: c_binary
+        dataType:
+          type: Binary
+      - name: c_decimal
+        dataType:
+          type: Decimal
+      - name: c_array
+        dataType:
+          type: Array
+          dataType:
+            type: String
+      - name: c_array_struct
+        dataType:
+          type: Array
+          dataType:
+            type: Struct
+            fields:
+            - name: city
+              dataType:
+                type: String
+            - name: state
+              dataType:
+                type: String
+            - name: pin
+              dataType:
+                type: Bigint
+            - name: start_date
+              dataType:
+                type: Date
+            - name: is_available
+              dataType:
+                type: Boolean
+            - name: yearlyrates
+              dataType:
+                type: Array
+                dataType:
+                  type: Integer
+            - name: roomsizes
+              dataType:
+                type: Struct
+                fields:
+                - name: r_name
+                  dataType:
+                    type: String
+                - name: size
+                  dataType:
+                    type: Integer
+      - name: c_map
+        dataType:
+          type: Map
+          keyType:
+            type: String
+          valueType:
+            type: Integer
+      - name: c_struct
+        dataType:
+          type: Struct
+          fields:
+          - name: city
+            dataType:
+              type: String
+          - name: state
+            dataType:
+              type: String
+          - name: pin
+            dataType:
+              type: Bigint
+          - name: start_date
+            dataType:
+              type: Date
+          - name: is_available
+            dataType:
+              type: Boolean
+          - name: yearlyrates
+            dataType:
+              type: Array
+              dataType:
+                type: Integer
+          - name: roomsizes
+            dataType:
+              type: Struct
+              fields:
+              - name: r_name
+                dataType:
+                  type: String
+              - name: size
+                dataType:
+                  type: Integer
+      - name: p_string
+        dataType:
+          type: String
+      - name: p_int
+        dataType:
+          type: Integer
+      - name: dbt_scd_id
+        dataType:
+          type: String
+      - name: dbt_updated_at
+        dataType:
+          type: Float
+      - name: dbt_valid_from
+        dataType:
+          type: Float
+      - name: dbt_valid_to
+        dataType:
+          type: Float
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - snapshots/mod6.sql
+    - .prophecy/ide/snapshots/mod6.json
+    - snapshots/schema.yml
+    sqlDependencies:
+      models: []
+      datasets: []
+      seeds: []
+      sources: []
+      snapshots: []
+    createdAt: '2024-10-24 09:48:18'
+  .prophecy/metadata/sqlsnapshots/mod2:
+    name: mod2
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: c_tinyint
+        dataType:
+          type: TinyInt
+      - name: c_smallint
+        dataType:
+          type: SmallInt
+      - name: c_int
+        dataType:
+          type: Integer
+      - name: c_bigint
+        dataType:
+          type: Bigint
+      - name: c_float
+        dataType:
+          type: Float
+      - name: c_double
+        dataType:
+          type: Double
+      - name: c_string
+        dataType:
+          type: String
+      - name: c_boolean
+        dataType:
+          type: Boolean
+      - name: c_date
+        dataType:
+          type: Date
+      - name: c_timestamp
+        dataType:
+          type: Timestamp
+      - name: c_binary
+        dataType:
+          type: Binary
+      - name: c_decimal
+        dataType:
+          type: Decimal
+      - name: c_array
+        dataType:
+          type: Array
+          dataType:
+            type: String
+      - name: c_array_struct
+        dataType:
+          type: Array
+          dataType:
+            type: Struct
+            fields:
+            - name: city
+              dataType:
+                type: String
+            - name: state
+              dataType:
+                type: String
+            - name: pin
+              dataType:
+                type: Bigint
+            - name: start_date
+              dataType:
+                type: Date
+            - name: is_available
+              dataType:
+                type: Boolean
+            - name: yearlyrates
+              dataType:
+                type: Array
+                dataType:
+                  type: Integer
+            - name: roomsizes
+              dataType:
+                type: Struct
+                fields:
+                - name: r_name
+                  dataType:
+                    type: String
+                - name: size
+                  dataType:
+                    type: Integer
+      - name: c_map
+        dataType:
+          type: Map
+          keyType:
+            type: String
+          valueType:
+            type: Integer
+      - name: c_struct
+        dataType:
+          type: Struct
+          fields:
+          - name: city
+            dataType:
+              type: String
+          - name: state
+            dataType:
+              type: String
+          - name: pin
+            dataType:
+              type: Bigint
+          - name: start_date
+            dataType:
+              type: Date
+          - name: is_available
+            dataType:
+              type: Boolean
+          - name: yearlyrates
+            dataType:
+              type: Array
+              dataType:
+                type: Integer
+          - name: roomsizes
+            dataType:
+              type: Struct
+              fields:
+              - name: r_name
+                dataType:
+                  type: String
+              - name: size
+                dataType:
+                  type: Integer
+      - name: p_string
+        dataType:
+          type: String
+      - name: p_int
+        dataType:
+          type: Integer
+      - name: dbt_scd_id
+        dataType:
+          type: String
+      - name: dbt_updated_at
+        dataType:
+          type: Double
+      - name: dbt_valid_from
+        dataType:
+          type: Double
+      - name: dbt_valid_to
+        dataType:
+          type: Double
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - snapshots/mod2.sql
+    - .prophecy/ide/snapshots/mod2.json
+    - snapshots/schema.yml
+    sqlDependencies:
+      models: []
+      datasets: []
+      seeds: []
+      sources: []
+      snapshots: []
+    createdAt: '2024-10-24 08:59:29'
+  .prophecy/metadata/sqlsnapshots/mod3:
+    name: mod3
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: c_tinyint
+        dataType:
+          type: TinyInt
+      - name: c_smallint
+        dataType:
+          type: SmallInt
+      - name: c_int
+        dataType:
+          type: Integer
+      - name: c_bigint
+        dataType:
+          type: Bigint
+      - name: c_float
+        dataType:
+          type: Float
+      - name: c_double
+        dataType:
+          type: Double
+      - name: c_string
+        dataType:
+          type: String
+      - name: c_boolean
+        dataType:
+          type: Boolean
+      - name: c_date
+        dataType:
+          type: Date
+      - name: c_timestamp
+        dataType:
+          type: Timestamp
+      - name: c_binary
+        dataType:
+          type: Binary
+      - name: c_decimal
+        dataType:
+          type: Decimal
+      - name: c_array
+        dataType:
+          type: Array
+          dataType:
+            type: String
+      - name: c_array_struct
+        dataType:
+          type: Array
+          dataType:
+            type: Struct
+            fields:
+            - name: city
+              dataType:
+                type: String
+            - name: state
+              dataType:
+                type: String
+            - name: pin
+              dataType:
+                type: Bigint
+            - name: start_date
+              dataType:
+                type: Date
+            - name: is_available
+              dataType:
+                type: Boolean
+            - name: yearlyrates
+              dataType:
+                type: Array
+                dataType:
+                  type: Integer
+            - name: roomsizes
+              dataType:
+                type: Struct
+                fields:
+                - name: r_name
+                  dataType:
+                    type: String
+                - name: size
+                  dataType:
+                    type: Integer
+      - name: c_map
+        dataType:
+          type: Map
+          keyType:
+            type: String
+          valueType:
+            type: Integer
+      - name: c_struct
+        dataType:
+          type: Struct
+          fields:
+          - name: city
+            dataType:
+              type: String
+          - name: state
+            dataType:
+              type: String
+          - name: pin
+            dataType:
+              type: Bigint
+          - name: start_date
+            dataType:
+              type: Date
+          - name: is_available
+            dataType:
+              type: Boolean
+          - name: yearlyrates
+            dataType:
+              type: Array
+              dataType:
+                type: Integer
+          - name: roomsizes
+            dataType:
+              type: Struct
+              fields:
+              - name: r_name
+                dataType:
+                  type: String
+              - name: size
+                dataType:
+                  type: Integer
+      - name: p_string
+        dataType:
+          type: String
+      - name: p_int
+        dataType:
+          type: Integer
+      - name: dbt_scd_id
+        dataType:
+          type: String
+      - name: dbt_updated_at
+        dataType:
+          type: Boolean
+      - name: dbt_valid_from
+        dataType:
+          type: Boolean
+      - name: dbt_valid_to
+        dataType:
+          type: Boolean
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - snapshots/mod3.sql
+    - .prophecy/ide/snapshots/mod3.json
+    - snapshots/schema.yml
+    sqlDependencies:
+      models: []
+      datasets: []
+      seeds: []
+      sources: []
+      snapshots: []
+    createdAt: '2024-10-24 09:31:07'
+  .prophecy/metadata/sqlsnapshots/mod4:
+    name: mod4
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: c_tinyint
+        dataType:
+          type: TinyInt
+      - name: c_smallint
+        dataType:
+          type: SmallInt
+      - name: c_int
+        dataType:
+          type: Integer
+      - name: c_bigint
+        dataType:
+          type: Bigint
+      - name: c_float
+        dataType:
+          type: Float
+      - name: c_double
+        dataType:
+          type: Double
+      - name: c_string
+        dataType:
+          type: String
+      - name: c_boolean
+        dataType:
+          type: Boolean
+      - name: c_date
+        dataType:
+          type: Date
+      - name: c_timestamp
+        dataType:
+          type: Timestamp
+      - name: c_binary
+        dataType:
+          type: Binary
+      - name: c_decimal
+        dataType:
+          type: Decimal
+      - name: c_array
+        dataType:
+          type: Array
+          dataType:
+            type: String
+      - name: c_array_struct
+        dataType:
+          type: Array
+          dataType:
+            type: Struct
+            fields:
+            - name: city
+              dataType:
+                type: String
+            - name: state
+              dataType:
+                type: String
+            - name: pin
+              dataType:
+                type: Bigint
+            - name: start_date
+              dataType:
+                type: Date
+            - name: is_available
+              dataType:
+                type: Boolean
+            - name: yearlyrates
+              dataType:
+                type: Array
+                dataType:
+                  type: Integer
+            - name: roomsizes
+              dataType:
+                type: Struct
+                fields:
+                - name: r_name
+                  dataType:
+                    type: String
+                - name: size
+                  dataType:
+                    type: Integer
+      - name: c_map
+        dataType:
+          type: Map
+          keyType:
+            type: String
+          valueType:
+            type: Integer
+      - name: c_struct
+        dataType:
+          type: Struct
+          fields:
+          - name: city
+            dataType:
+              type: String
+          - name: state
+            dataType:
+              type: String
+          - name: pin
+            dataType:
+              type: Bigint
+          - name: start_date
+            dataType:
+              type: Date
+          - name: is_available
+            dataType:
+              type: Boolean
+          - name: yearlyrates
+            dataType:
+              type: Array
+              dataType:
+                type: Integer
+          - name: roomsizes
+            dataType:
+              type: Struct
+              fields:
+              - name: r_name
+                dataType:
+                  type: String
+              - name: size
+                dataType:
+                  type: Integer
+      - name: p_string
+        dataType:
+          type: String
+      - name: p_int
+        dataType:
+          type: Integer
+      - name: dbt_scd_id
+        dataType:
+          type: String
+      - name: dbt_updated_at
+        dataType:
+          type: Float
+      - name: dbt_valid_from
+        dataType:
+          type: Float
+      - name: dbt_valid_to
+        dataType:
+          type: Float
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - snapshots/mod4.sql
+    - .prophecy/ide/snapshots/mod4.json
+    - snapshots/schema.yml
+    sqlDependencies:
+      models: []
+      datasets: []
+      seeds: []
+      sources: []
+      snapshots: []
+    createdAt: '2024-10-24 09:37:06'
+  .prophecy/metadata/sqlsnapshots/mod1:
+    name: mod1
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: c_tinyint
+        dataType:
+          type: TinyInt
+      - name: c_smallint
+        dataType:
+          type: SmallInt
+      - name: c_int
+        dataType:
+          type: Integer
+      - name: c_bigint
+        dataType:
+          type: Bigint
+      - name: c_float
+        dataType:
+          type: Float
+      - name: c_double
+        dataType:
+          type: Double
+      - name: c_string
+        dataType:
+          type: String
+      - name: c_boolean
+        dataType:
+          type: Boolean
+      - name: c_date
+        dataType:
+          type: Date
+      - name: c_timestamp
+        dataType:
+          type: Timestamp
+      - name: c_binary
+        dataType:
+          type: Binary
+      - name: c_decimal
+        dataType:
+          type: Decimal
+      - name: c_array
+        dataType:
+          type: Array
+          dataType:
+            type: String
+      - name: c_array_struct
+        dataType:
+          type: Array
+          dataType:
+            type: Struct
+            fields:
+            - name: city
+              dataType:
+                type: String
+            - name: state
+              dataType:
+                type: String
+            - name: pin
+              dataType:
+                type: Bigint
+            - name: start_date
+              dataType:
+                type: Date
+            - name: is_available
+              dataType:
+                type: Boolean
+            - name: yearlyrates
+              dataType:
+                type: Array
+                dataType:
+                  type: Integer
+            - name: roomsizes
+              dataType:
+                type: Struct
+                fields:
+                - name: r_name
+                  dataType:
+                    type: String
+                - name: size
+                  dataType:
+                    type: Integer
+      - name: c_map
+        dataType:
+          type: Map
+          keyType:
+            type: String
+          valueType:
+            type: Integer
+      - name: c_struct
+        dataType:
+          type: Struct
+          fields:
+          - name: city
+            dataType:
+              type: String
+          - name: state
+            dataType:
+              type: String
+          - name: pin
+            dataType:
+              type: Bigint
+          - name: start_date
+            dataType:
+              type: Date
+          - name: is_available
+            dataType:
+              type: Boolean
+          - name: yearlyrates
+            dataType:
+              type: Array
+              dataType:
+                type: Integer
+          - name: roomsizes
+            dataType:
+              type: Struct
+              fields:
+              - name: r_name
+                dataType:
+                  type: String
+              - name: size
+                dataType:
+                  type: Integer
+      - name: p_string
+        dataType:
+          type: String
+      - name: p_int
+        dataType:
+          type: Integer
+      - name: dbt_scd_id
+        dataType:
+          type: String
+      - name: dbt_updated_at
+        dataType:
+          type: Double
+      - name: dbt_valid_from
+        dataType:
+          type: Double
+      - name: dbt_valid_to
+        dataType:
+          type: Double
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - snapshots/mod1.sql
+    - .prophecy/ide/snapshots/mod1.json
+    - snapshots/schema.yml
+    sqlDependencies:
+      models: []
+      datasets: []
+      seeds: []
+      sources: []
+      snapshots: []
+    createdAt: '2024-10-24 08:38:36'
+  .prophecy/metadata/sqlsnapshots/mod5:
+    name: mod5
+    schema:
+      entityType: ''
+      providerType: Databricks
+      fields:
+      - name: c_tinyint
+        dataType:
+          type: TinyInt
+      - name: c_smallint
+        dataType:
+          type: SmallInt
+      - name: c_int
+        dataType:
+          type: Integer
+      - name: c_bigint
+        dataType:
+          type: Bigint
+      - name: c_float
+        dataType:
+          type: Float
+      - name: c_double
+        dataType:
+          type: Double
+      - name: c_string
+        dataType:
+          type: String
+      - name: c_boolean
+        dataType:
+          type: Boolean
+      - name: c_date
+        dataType:
+          type: Date
+      - name: c_timestamp
+        dataType:
+          type: Timestamp
+      - name: c_binary
+        dataType:
+          type: Binary
+      - name: c_decimal
+        dataType:
+          type: Decimal
+      - name: c_array
+        dataType:
+          type: Array
+          dataType:
+            type: String
+      - name: c_array_struct
+        dataType:
+          type: Array
+          dataType:
+            type: Struct
+            fields:
+            - name: city
+              dataType:
+                type: String
+            - name: state
+              dataType:
+                type: String
+            - name: pin
+              dataType:
+                type: Bigint
+            - name: start_date
+              dataType:
+                type: Date
+            - name: is_available
+              dataType:
+                type: Boolean
+            - name: yearlyrates
+              dataType:
+                type: Array
+                dataType:
+                  type: Integer
+            - name: roomsizes
+              dataType:
+                type: Struct
+                fields:
+                - name: r_name
+                  dataType:
+                    type: String
+                - name: size
+                  dataType:
+                    type: Integer
+      - name: c_map
+        dataType:
+          type: Map
+          keyType:
+            type: String
+          valueType:
+            type: Integer
+      - name: c_struct
+        dataType:
+          type: Struct
+          fields:
+          - name: city
+            dataType:
+              type: String
+          - name: state
+            dataType:
+              type: String
+          - name: pin
+            dataType:
+              type: Bigint
+          - name: start_date
+            dataType:
+              type: Date
+          - name: is_available
+            dataType:
+              type: Boolean
+          - name: yearlyrates
+            dataType:
+              type: Array
+              dataType:
+                type: Integer
+          - name: roomsizes
+            dataType:
+              type: Struct
+              fields:
+              - name: r_name
+                dataType:
+                  type: String
+              - name: size
+                dataType:
+                  type: Integer
+      - name: p_string
+        dataType:
+          type: String
+      - name: p_int
+        dataType:
+          type: Integer
+      - name: dbt_scd_id
+        dataType:
+          type: String
+      - name: dbt_updated_at
+        dataType:
+          type: SmallInt
+      - name: dbt_valid_from
+        dataType:
+          type: SmallInt
+      - name: dbt_valid_to
+        dataType:
+          type: SmallInt
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - snapshots/mod5.sql
+    - .prophecy/ide/snapshots/mod5.json
+    - snapshots/schema.yml
+    sqlDependencies:
+      models: []
+      datasets: []
+      seeds: []
+      sources: []
+      snapshots: []
+    createdAt: '2024-10-24 09:47:19'
+sqlTests: {}
+sqlMacros:
+  .prophecy/metadata/sqlmacros/generate_schema_name:
+    name: generate_schema_name
+    macroType: expression
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - macros/generate_schema_name.sql
+    - .prophecy/ide/macros/generate_schema_name.json
+    createdAt: '2024-10-24 08:34:22'
+sqlSeeds: {}
+sqlSources:
+  .prophecy/metadata/sqlsources/hive_metastore_qa_db_warehouse:
+    name: hive_metastore.qa_db_warehouse
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - prophecy-sources/sources.yml
+    createdAt: '2024-10-24 08:36:34'
+    tables:
+    - name: all_type_table_default
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields:
+        - name: c_tinyint
+          dataType:
+            type: TinyInt
+        - name: c_smallint
+          dataType:
+            type: SmallInt
+        - name: c_int
+          dataType:
+            type: Integer
+        - name: c_bigint
+          dataType:
+            type: Bigint
+        - name: c_float
+          dataType:
+            type: Float
+        - name: c_double
+          dataType:
+            type: Double
+        - name: c_string
+          dataType:
+            type: String
+        - name: c_boolean
+          dataType:
+            type: Boolean
+        - name: c_date
+          dataType:
+            type: Date
+        - name: c_timestamp
+          dataType:
+            type: Timestamp
+        - name: c_binary
+          dataType:
+            type: Binary
+        - name: c_decimal
+          dataType:
+            type: Decimal
+        - name: c_array
+          dataType:
+            type: Array
+            dataType:
+              type: String
+        - name: c_array_struct
+          dataType:
+            type: Array
+            dataType:
+              type: Struct
+              fields:
+              - name: city
+                dataType:
+                  type: String
+                description: The name of the city within the structured data array.
+              - name: state
+                dataType:
+                  type: String
+                description: State associated with the location in the array structure
+              - name: pin
+                dataType:
+                  type: Bigint
+                description: Postal code linked to the location in the array structure
+              - name: start_date
+                dataType:
+                  type: Date
+                description: Start date indicating when the location became available
+              - name: is_available
+                dataType:
+                  type: Boolean
+                description: Indicates the availability status of the property
+              - name: yearlyrates
+                dataType:
+                  type: Array
+                  dataType:
+                    type: Integer
+                description: Array of yearly rates associated with the property
+              - name: roomsizes
+                dataType:
+                  type: Struct
+                  fields:
+                  - name: r_name
+                    dataType:
+                      type: String
+                    description: Name of the room type available in the property
+                  - name: size
+                    dataType:
+                      type: Integer
+                    description: Size of the room in specified units
+                description: Details about the sizes of rooms available in the property
+        - name: c_map
+          dataType:
+            type: Map
+            keyType:
+              type: String
+            valueType:
+              type: Integer
+        - name: c_struct
+          dataType:
+            type: Struct
+            fields:
+            - name: city
+              dataType:
+                type: String
+              description: The city associated with the structured location data.
+            - name: state
+              dataType:
+                type: String
+              description: The state associated with the structured location data.
+            - name: pin
+              dataType:
+                type: Bigint
+              description: Postal code associated with the location
+            - name: start_date
+              dataType:
+                type: Date
+              description: Date when the property becomes available
+            - name: is_available
+              dataType:
+                type: Boolean
+              description: Indicates whether the property is currently available
+            - name: yearlyrates
+              dataType:
+                type: Array
+                dataType:
+                  type: Integer
+              description: Annual rates associated with the property
+            - name: roomsizes
+              dataType:
+                type: Struct
+                fields:
+                - name: r_name
+                  dataType:
+                    type: String
+                  description: Name of the room type available in the property
+                - name: size
+                  dataType:
+                    type: Integer
+                  description: Size of the room in the structure
+              description: Details of the room sizes available in the property
+        - name: p_string
+          dataType:
+            type: String
+        - name: p_int
+          dataType:
+            type: Integer
+      description: Comprehensive dataset capturing various data types, enabling diverse
+        analytical capabilities across multiple dimensions.
+      author: abhisheks+e2etests@prophecy.io
+      createdAt: '2024-10-24 08:36:34'
+sqlUnreferencedSources: {}
+sqlPipeline:
+  name: sqlPipeline
+  description: null
+  author: abhisheks+e2etests@prophecy.io
+  createdAt: '2024-10-24 08:34:20'
+dependencies: []
+projectDependencies: {}
+flags:
+  shouldAddDefaultDependenciesIfAbsent: true
+pipelineConfigurations: {}

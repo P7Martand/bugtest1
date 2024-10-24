@@ -1,0 +1,2130 @@
+{
+  "id" : "DeeperModel",
+  "metainfo" : {
+    "label" : "DeeperModel",
+    "autoLayout" : false,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "DeeperModel##bTX2RssS" : {
+      "id" : "DeeperModel##bTX2RssS",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "DeeperModel",
+        "x" : -60,
+        "y" : -80,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT * \n\nFROM Subgraph_1\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "A4cxlN9m",
+          "slug" : "Subgraph_1"
+        } ],
+        "outputs" : [ {
+          "id" : "EM4Vdy44",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "hFis4F42I1cywBiWROVyC" : {
+      "id" : "hFis4F42I1cywBiWROVyC",
+      "component" : "Snapshot",
+      "metadata" : {
+        "label" : "mod6",
+        "slug" : "mod6",
+        "x" : -460,
+        "y" : -80,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "mod6",
+          "sourceType" : "Snapshot",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "rLknIM4KruzWp846117dC",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "hOsWMOr6fZdkqWfmGUkyi$$fIZQkaJCnm5vJkwjE4gwD" : {
+      "id" : "hOsWMOr6fZdkqWfmGUkyi$$fIZQkaJCnm5vJkwjE4gwD",
+      "component" : "Subgraph",
+      "metadata" : {
+        "label" : "Subgraph_1",
+        "slug" : "Subgraph_1",
+        "x" : -260,
+        "y" : -80,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "processes" : {
+        "c6Ew2kFHXT4in8sG-nnOf$$HkwbVe_Y0JlUMIhrsv_3c" : {
+          "id" : "c6Ew2kFHXT4in8sG-nnOf$$HkwbVe_Y0JlUMIhrsv_3c",
+          "component" : "SQLStatement",
+          "metadata" : {
+            "label" : "SQLStatement_1",
+            "slug" : "SQLStatement_1",
+            "x" : 620,
+            "y" : 20,
+            "phase" : 0,
+            "macroDependencies" : [ ],
+            "comment" : "Retrieves the formatted records of patients with chronic conditions born before 2000.",
+            "autoUpdateComment" : true
+          },
+          "properties" : {
+            "fileTabs" : [ {
+              "path" : "out",
+              "id" : "out",
+              "language" : "sql",
+              "content" : "select * from Reformat_1"
+            } ]
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "BPf17b16-bpk4jZV6UnZj$$xOVdHdmARu6fAjWBJ2D1T",
+              "schema" : {
+                "entityType" : "",
+                "providerType" : "Databricks",
+                "fields" : [ {
+                  "name" : "dbt_updated_at",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                }, {
+                  "name" : "newdbt_value",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                }, {
+                  "name" : "dbt_valid_to",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                }, {
+                  "name" : "dbt_scd_id",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                } ]
+              },
+              "slug" : "Reformat_1"
+            } ],
+            "outputs" : [ {
+              "id" : "FoSAFI7rX9w9tLnodolRN$$vSt8Yv0OtEV27CjlUzi1R",
+              "schema" : {
+                "entityType" : "",
+                "providerType" : "Databricks",
+                "fields" : [ {
+                  "name" : "dbt_updated_at",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                }, {
+                  "name" : "newdbt_value",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                }, {
+                  "name" : "dbt_valid_to",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                }, {
+                  "name" : "dbt_scd_id",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                } ]
+              },
+              "slug" : "out"
+            } ],
+            "isCustomOutputSchema" : false,
+            "autoUpdateOnRun" : false
+          }
+        },
+        "PYXRtXJzTAGiNDS5VuAl6$$Br4GvX2vL9RRpWN49MaKn" : {
+          "id" : "PYXRtXJzTAGiNDS5VuAl6$$Br4GvX2vL9RRpWN49MaKn",
+          "component" : "OrderBy",
+          "metadata" : {
+            "label" : "OrderBy_1",
+            "slug" : "OrderBy_1",
+            "x" : 220,
+            "y" : 20,
+            "phase" : 0,
+            "macroDependencies" : [ ],
+            "comment" : "Sorts filtered records by validity date and ID for better organization.",
+            "autoUpdateComment" : true
+          },
+          "properties" : {
+            "columnsSelector" : [ "H6zgpxwc6wgEPq3mXkwx7$$K2NVHndC8UGk9V0nzTr4f##dbt_valid_from", "H6zgpxwc6wgEPq3mXkwx7$$K2NVHndC8UGk9V0nzTr4f##dbt_scd_id" ],
+            "orders" : [ {
+              "expression" : {
+                "expression" : "dbt_valid_from"
+              },
+              "sortType" : "asc",
+              "nullsType" : "nulls last"
+            }, {
+              "expression" : {
+                "expression" : "dbt_scd_id"
+              },
+              "sortType" : "asc",
+              "nullsType" : "nulls last"
+            } ]
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "H6zgpxwc6wgEPq3mXkwx7$$K2NVHndC8UGk9V0nzTr4f",
+              "schema" : {
+                "entityType" : "",
+                "providerType" : "Databricks",
+                "fields" : [ {
+                  "name" : "c_tinyint",
+                  "dataType" : {
+                    "type" : "TinyInt"
+                  }
+                }, {
+                  "name" : "c_smallint",
+                  "dataType" : {
+                    "type" : "SmallInt"
+                  }
+                }, {
+                  "name" : "c_int",
+                  "dataType" : {
+                    "type" : "Integer"
+                  }
+                }, {
+                  "name" : "c_bigint",
+                  "dataType" : {
+                    "type" : "Bigint"
+                  }
+                }, {
+                  "name" : "c_float",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                }, {
+                  "name" : "c_double",
+                  "dataType" : {
+                    "type" : "Double"
+                  }
+                }, {
+                  "name" : "c_string",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "c_boolean",
+                  "dataType" : {
+                    "type" : "Boolean"
+                  }
+                }, {
+                  "name" : "c_date",
+                  "dataType" : {
+                    "type" : "Date"
+                  }
+                }, {
+                  "name" : "c_timestamp",
+                  "dataType" : {
+                    "type" : "Timestamp"
+                  }
+                }, {
+                  "name" : "c_binary",
+                  "dataType" : {
+                    "type" : "Binary"
+                  }
+                }, {
+                  "name" : "c_decimal",
+                  "dataType" : {
+                    "type" : "Decimal"
+                  }
+                }, {
+                  "name" : "c_array",
+                  "dataType" : {
+                    "type" : "Array",
+                    "dataType" : {
+                      "type" : "String"
+                    }
+                  }
+                }, {
+                  "name" : "c_array_struct",
+                  "dataType" : {
+                    "type" : "Array",
+                    "dataType" : {
+                      "type" : "Struct",
+                      "fields" : [ {
+                        "name" : "city",
+                        "dataType" : {
+                          "type" : "String"
+                        }
+                      }, {
+                        "name" : "state",
+                        "dataType" : {
+                          "type" : "String"
+                        }
+                      }, {
+                        "name" : "pin",
+                        "dataType" : {
+                          "type" : "Bigint"
+                        }
+                      }, {
+                        "name" : "start_date",
+                        "dataType" : {
+                          "type" : "Date"
+                        }
+                      }, {
+                        "name" : "is_available",
+                        "dataType" : {
+                          "type" : "Boolean"
+                        }
+                      }, {
+                        "name" : "yearlyrates",
+                        "dataType" : {
+                          "type" : "Array",
+                          "dataType" : {
+                            "type" : "Integer"
+                          }
+                        }
+                      }, {
+                        "name" : "roomsizes",
+                        "dataType" : {
+                          "type" : "Struct",
+                          "fields" : [ {
+                            "name" : "r_name",
+                            "dataType" : {
+                              "type" : "String"
+                            }
+                          }, {
+                            "name" : "size",
+                            "dataType" : {
+                              "type" : "Integer"
+                            }
+                          } ]
+                        }
+                      } ]
+                    }
+                  }
+                }, {
+                  "name" : "c_map",
+                  "dataType" : {
+                    "type" : "Map",
+                    "keyType" : {
+                      "type" : "String"
+                    },
+                    "valueType" : {
+                      "type" : "Integer"
+                    }
+                  }
+                }, {
+                  "name" : "c_struct",
+                  "dataType" : {
+                    "type" : "Struct",
+                    "fields" : [ {
+                      "name" : "city",
+                      "dataType" : {
+                        "type" : "String"
+                      }
+                    }, {
+                      "name" : "state",
+                      "dataType" : {
+                        "type" : "String"
+                      }
+                    }, {
+                      "name" : "pin",
+                      "dataType" : {
+                        "type" : "Bigint"
+                      }
+                    }, {
+                      "name" : "start_date",
+                      "dataType" : {
+                        "type" : "Date"
+                      }
+                    }, {
+                      "name" : "is_available",
+                      "dataType" : {
+                        "type" : "Boolean"
+                      }
+                    }, {
+                      "name" : "yearlyrates",
+                      "dataType" : {
+                        "type" : "Array",
+                        "dataType" : {
+                          "type" : "Integer"
+                        }
+                      }
+                    }, {
+                      "name" : "roomsizes",
+                      "dataType" : {
+                        "type" : "Struct",
+                        "fields" : [ {
+                          "name" : "r_name",
+                          "dataType" : {
+                            "type" : "String"
+                          }
+                        }, {
+                          "name" : "size",
+                          "dataType" : {
+                            "type" : "Integer"
+                          }
+                        } ]
+                      }
+                    } ]
+                  }
+                }, {
+                  "name" : "p_string",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "p_int",
+                  "dataType" : {
+                    "type" : "Integer"
+                  }
+                }, {
+                  "name" : "dbt_scd_id",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "dbt_updated_at",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                }, {
+                  "name" : "dbt_valid_from",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                }, {
+                  "name" : "dbt_valid_to",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                } ]
+              },
+              "slug" : "in0"
+            } ],
+            "outputs" : [ {
+              "id" : "Tqy7vt8HS7lf5NA8RUgQi$$1Cena0vVx9kOqHHhUwOR3",
+              "schema" : {
+                "entityType" : "",
+                "providerType" : "Databricks",
+                "fields" : [ {
+                  "name" : "c_tinyint",
+                  "dataType" : {
+                    "type" : "TinyInt"
+                  }
+                }, {
+                  "name" : "c_smallint",
+                  "dataType" : {
+                    "type" : "SmallInt"
+                  }
+                }, {
+                  "name" : "c_int",
+                  "dataType" : {
+                    "type" : "Integer"
+                  }
+                }, {
+                  "name" : "c_bigint",
+                  "dataType" : {
+                    "type" : "Bigint"
+                  }
+                }, {
+                  "name" : "c_float",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                }, {
+                  "name" : "c_double",
+                  "dataType" : {
+                    "type" : "Double"
+                  }
+                }, {
+                  "name" : "c_string",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "c_boolean",
+                  "dataType" : {
+                    "type" : "Boolean"
+                  }
+                }, {
+                  "name" : "c_date",
+                  "dataType" : {
+                    "type" : "Date"
+                  }
+                }, {
+                  "name" : "c_timestamp",
+                  "dataType" : {
+                    "type" : "Timestamp"
+                  }
+                }, {
+                  "name" : "c_binary",
+                  "dataType" : {
+                    "type" : "Binary"
+                  }
+                }, {
+                  "name" : "c_decimal",
+                  "dataType" : {
+                    "type" : "Decimal"
+                  }
+                }, {
+                  "name" : "c_array",
+                  "dataType" : {
+                    "type" : "Array",
+                    "dataType" : {
+                      "type" : "String"
+                    }
+                  }
+                }, {
+                  "name" : "c_array_struct",
+                  "dataType" : {
+                    "type" : "Array",
+                    "dataType" : {
+                      "type" : "Struct",
+                      "fields" : [ {
+                        "name" : "city",
+                        "dataType" : {
+                          "type" : "String"
+                        }
+                      }, {
+                        "name" : "state",
+                        "dataType" : {
+                          "type" : "String"
+                        }
+                      }, {
+                        "name" : "pin",
+                        "dataType" : {
+                          "type" : "Bigint"
+                        }
+                      }, {
+                        "name" : "start_date",
+                        "dataType" : {
+                          "type" : "Date"
+                        }
+                      }, {
+                        "name" : "is_available",
+                        "dataType" : {
+                          "type" : "Boolean"
+                        }
+                      }, {
+                        "name" : "yearlyrates",
+                        "dataType" : {
+                          "type" : "Array",
+                          "dataType" : {
+                            "type" : "Integer"
+                          }
+                        }
+                      }, {
+                        "name" : "roomsizes",
+                        "dataType" : {
+                          "type" : "Struct",
+                          "fields" : [ {
+                            "name" : "r_name",
+                            "dataType" : {
+                              "type" : "String"
+                            }
+                          }, {
+                            "name" : "size",
+                            "dataType" : {
+                              "type" : "Integer"
+                            }
+                          } ]
+                        }
+                      } ]
+                    }
+                  }
+                }, {
+                  "name" : "c_map",
+                  "dataType" : {
+                    "type" : "Map",
+                    "keyType" : {
+                      "type" : "String"
+                    },
+                    "valueType" : {
+                      "type" : "Integer"
+                    }
+                  }
+                }, {
+                  "name" : "c_struct",
+                  "dataType" : {
+                    "type" : "Struct",
+                    "fields" : [ {
+                      "name" : "city",
+                      "dataType" : {
+                        "type" : "String"
+                      }
+                    }, {
+                      "name" : "state",
+                      "dataType" : {
+                        "type" : "String"
+                      }
+                    }, {
+                      "name" : "pin",
+                      "dataType" : {
+                        "type" : "Bigint"
+                      }
+                    }, {
+                      "name" : "start_date",
+                      "dataType" : {
+                        "type" : "Date"
+                      }
+                    }, {
+                      "name" : "is_available",
+                      "dataType" : {
+                        "type" : "Boolean"
+                      }
+                    }, {
+                      "name" : "yearlyrates",
+                      "dataType" : {
+                        "type" : "Array",
+                        "dataType" : {
+                          "type" : "Integer"
+                        }
+                      }
+                    }, {
+                      "name" : "roomsizes",
+                      "dataType" : {
+                        "type" : "Struct",
+                        "fields" : [ {
+                          "name" : "r_name",
+                          "dataType" : {
+                            "type" : "String"
+                          }
+                        }, {
+                          "name" : "size",
+                          "dataType" : {
+                            "type" : "Integer"
+                          }
+                        } ]
+                      }
+                    } ]
+                  }
+                }, {
+                  "name" : "p_string",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "p_int",
+                  "dataType" : {
+                    "type" : "Integer"
+                  }
+                }, {
+                  "name" : "dbt_scd_id",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "dbt_updated_at",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                }, {
+                  "name" : "dbt_valid_from",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                }, {
+                  "name" : "dbt_valid_to",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                } ]
+              },
+              "slug" : "out"
+            } ],
+            "isCustomOutputSchema" : false,
+            "autoUpdateOnRun" : false
+          }
+        },
+        "S98q9nBqprTNVSmjEgDRv$$T6qaoVEEU92b4h00-X_rO" : {
+          "id" : "S98q9nBqprTNVSmjEgDRv$$T6qaoVEEU92b4h00-X_rO",
+          "component" : "Filter",
+          "metadata" : {
+            "label" : "Filter_1",
+            "slug" : "Filter_1",
+            "x" : 20,
+            "y" : 20,
+            "phase" : 0,
+            "macroDependencies" : [ ],
+            "comment" : "Filters records to exclude specific values and ensure validity based on a threshold.",
+            "autoUpdateComment" : true
+          },
+          "properties" : {
+            "columnsSelector" : [ "AFQAnjPPCPalpPssqUFGa$$CJ6WCrTD4IAnx0VfIIuDE##dbt_scd_id", "AFQAnjPPCPalpPssqUFGa$$CJ6WCrTD4IAnx0VfIIuDE##dbt_valid_from" ],
+            "condition" : {
+              "expression" : "true AND dbt_scd_id != 'randomValue' AND dbt_valid_from >= 2.0"
+            }
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "AFQAnjPPCPalpPssqUFGa$$CJ6WCrTD4IAnx0VfIIuDE",
+              "schema" : {
+                "entityType" : "",
+                "providerType" : "Databricks",
+                "fields" : [ {
+                  "name" : "c_tinyint",
+                  "dataType" : {
+                    "type" : "TinyInt"
+                  }
+                }, {
+                  "name" : "c_smallint",
+                  "dataType" : {
+                    "type" : "SmallInt"
+                  }
+                }, {
+                  "name" : "c_int",
+                  "dataType" : {
+                    "type" : "Integer"
+                  }
+                }, {
+                  "name" : "c_bigint",
+                  "dataType" : {
+                    "type" : "Bigint"
+                  }
+                }, {
+                  "name" : "c_float",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                }, {
+                  "name" : "c_double",
+                  "dataType" : {
+                    "type" : "Double"
+                  }
+                }, {
+                  "name" : "c_string",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "c_boolean",
+                  "dataType" : {
+                    "type" : "Boolean"
+                  }
+                }, {
+                  "name" : "c_date",
+                  "dataType" : {
+                    "type" : "Date"
+                  }
+                }, {
+                  "name" : "c_timestamp",
+                  "dataType" : {
+                    "type" : "Timestamp"
+                  }
+                }, {
+                  "name" : "c_binary",
+                  "dataType" : {
+                    "type" : "Binary"
+                  }
+                }, {
+                  "name" : "c_decimal",
+                  "dataType" : {
+                    "type" : "Decimal"
+                  }
+                }, {
+                  "name" : "c_array",
+                  "dataType" : {
+                    "type" : "Array",
+                    "dataType" : {
+                      "type" : "String"
+                    }
+                  }
+                }, {
+                  "name" : "c_array_struct",
+                  "dataType" : {
+                    "type" : "Array",
+                    "dataType" : {
+                      "type" : "Struct",
+                      "fields" : [ {
+                        "name" : "city",
+                        "dataType" : {
+                          "type" : "String"
+                        }
+                      }, {
+                        "name" : "state",
+                        "dataType" : {
+                          "type" : "String"
+                        }
+                      }, {
+                        "name" : "pin",
+                        "dataType" : {
+                          "type" : "Bigint"
+                        }
+                      }, {
+                        "name" : "start_date",
+                        "dataType" : {
+                          "type" : "Date"
+                        }
+                      }, {
+                        "name" : "is_available",
+                        "dataType" : {
+                          "type" : "Boolean"
+                        }
+                      }, {
+                        "name" : "yearlyrates",
+                        "dataType" : {
+                          "type" : "Array",
+                          "dataType" : {
+                            "type" : "Integer"
+                          }
+                        }
+                      }, {
+                        "name" : "roomsizes",
+                        "dataType" : {
+                          "type" : "Struct",
+                          "fields" : [ {
+                            "name" : "r_name",
+                            "dataType" : {
+                              "type" : "String"
+                            }
+                          }, {
+                            "name" : "size",
+                            "dataType" : {
+                              "type" : "Integer"
+                            }
+                          } ]
+                        }
+                      } ]
+                    }
+                  }
+                }, {
+                  "name" : "c_map",
+                  "dataType" : {
+                    "type" : "Map",
+                    "keyType" : {
+                      "type" : "String"
+                    },
+                    "valueType" : {
+                      "type" : "Integer"
+                    }
+                  }
+                }, {
+                  "name" : "c_struct",
+                  "dataType" : {
+                    "type" : "Struct",
+                    "fields" : [ {
+                      "name" : "city",
+                      "dataType" : {
+                        "type" : "String"
+                      }
+                    }, {
+                      "name" : "state",
+                      "dataType" : {
+                        "type" : "String"
+                      }
+                    }, {
+                      "name" : "pin",
+                      "dataType" : {
+                        "type" : "Bigint"
+                      }
+                    }, {
+                      "name" : "start_date",
+                      "dataType" : {
+                        "type" : "Date"
+                      }
+                    }, {
+                      "name" : "is_available",
+                      "dataType" : {
+                        "type" : "Boolean"
+                      }
+                    }, {
+                      "name" : "yearlyrates",
+                      "dataType" : {
+                        "type" : "Array",
+                        "dataType" : {
+                          "type" : "Integer"
+                        }
+                      }
+                    }, {
+                      "name" : "roomsizes",
+                      "dataType" : {
+                        "type" : "Struct",
+                        "fields" : [ {
+                          "name" : "r_name",
+                          "dataType" : {
+                            "type" : "String"
+                          }
+                        }, {
+                          "name" : "size",
+                          "dataType" : {
+                            "type" : "Integer"
+                          }
+                        } ]
+                      }
+                    } ]
+                  }
+                }, {
+                  "name" : "p_string",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "p_int",
+                  "dataType" : {
+                    "type" : "Integer"
+                  }
+                }, {
+                  "name" : "dbt_scd_id",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "dbt_updated_at",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                }, {
+                  "name" : "dbt_valid_from",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                }, {
+                  "name" : "dbt_valid_to",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                } ]
+              },
+              "slug" : "in0"
+            } ],
+            "outputs" : [ {
+              "id" : "aGDBnmnga5PeIZy4zTD-3$$t2wZ6ypE_qIiRcP9UY8Gs",
+              "schema" : {
+                "entityType" : "",
+                "providerType" : "Databricks",
+                "fields" : [ {
+                  "name" : "c_tinyint",
+                  "dataType" : {
+                    "type" : "TinyInt"
+                  }
+                }, {
+                  "name" : "c_smallint",
+                  "dataType" : {
+                    "type" : "SmallInt"
+                  }
+                }, {
+                  "name" : "c_int",
+                  "dataType" : {
+                    "type" : "Integer"
+                  }
+                }, {
+                  "name" : "c_bigint",
+                  "dataType" : {
+                    "type" : "Bigint"
+                  }
+                }, {
+                  "name" : "c_float",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                }, {
+                  "name" : "c_double",
+                  "dataType" : {
+                    "type" : "Double"
+                  }
+                }, {
+                  "name" : "c_string",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "c_boolean",
+                  "dataType" : {
+                    "type" : "Boolean"
+                  }
+                }, {
+                  "name" : "c_date",
+                  "dataType" : {
+                    "type" : "Date"
+                  }
+                }, {
+                  "name" : "c_timestamp",
+                  "dataType" : {
+                    "type" : "Timestamp"
+                  }
+                }, {
+                  "name" : "c_binary",
+                  "dataType" : {
+                    "type" : "Binary"
+                  }
+                }, {
+                  "name" : "c_decimal",
+                  "dataType" : {
+                    "type" : "Decimal"
+                  }
+                }, {
+                  "name" : "c_array",
+                  "dataType" : {
+                    "type" : "Array",
+                    "dataType" : {
+                      "type" : "String"
+                    }
+                  }
+                }, {
+                  "name" : "c_array_struct",
+                  "dataType" : {
+                    "type" : "Array",
+                    "dataType" : {
+                      "type" : "Struct",
+                      "fields" : [ {
+                        "name" : "city",
+                        "dataType" : {
+                          "type" : "String"
+                        }
+                      }, {
+                        "name" : "state",
+                        "dataType" : {
+                          "type" : "String"
+                        }
+                      }, {
+                        "name" : "pin",
+                        "dataType" : {
+                          "type" : "Bigint"
+                        }
+                      }, {
+                        "name" : "start_date",
+                        "dataType" : {
+                          "type" : "Date"
+                        }
+                      }, {
+                        "name" : "is_available",
+                        "dataType" : {
+                          "type" : "Boolean"
+                        }
+                      }, {
+                        "name" : "yearlyrates",
+                        "dataType" : {
+                          "type" : "Array",
+                          "dataType" : {
+                            "type" : "Integer"
+                          }
+                        }
+                      }, {
+                        "name" : "roomsizes",
+                        "dataType" : {
+                          "type" : "Struct",
+                          "fields" : [ {
+                            "name" : "r_name",
+                            "dataType" : {
+                              "type" : "String"
+                            }
+                          }, {
+                            "name" : "size",
+                            "dataType" : {
+                              "type" : "Integer"
+                            }
+                          } ]
+                        }
+                      } ]
+                    }
+                  }
+                }, {
+                  "name" : "c_map",
+                  "dataType" : {
+                    "type" : "Map",
+                    "keyType" : {
+                      "type" : "String"
+                    },
+                    "valueType" : {
+                      "type" : "Integer"
+                    }
+                  }
+                }, {
+                  "name" : "c_struct",
+                  "dataType" : {
+                    "type" : "Struct",
+                    "fields" : [ {
+                      "name" : "city",
+                      "dataType" : {
+                        "type" : "String"
+                      }
+                    }, {
+                      "name" : "state",
+                      "dataType" : {
+                        "type" : "String"
+                      }
+                    }, {
+                      "name" : "pin",
+                      "dataType" : {
+                        "type" : "Bigint"
+                      }
+                    }, {
+                      "name" : "start_date",
+                      "dataType" : {
+                        "type" : "Date"
+                      }
+                    }, {
+                      "name" : "is_available",
+                      "dataType" : {
+                        "type" : "Boolean"
+                      }
+                    }, {
+                      "name" : "yearlyrates",
+                      "dataType" : {
+                        "type" : "Array",
+                        "dataType" : {
+                          "type" : "Integer"
+                        }
+                      }
+                    }, {
+                      "name" : "roomsizes",
+                      "dataType" : {
+                        "type" : "Struct",
+                        "fields" : [ {
+                          "name" : "r_name",
+                          "dataType" : {
+                            "type" : "String"
+                          }
+                        }, {
+                          "name" : "size",
+                          "dataType" : {
+                            "type" : "Integer"
+                          }
+                        } ]
+                      }
+                    } ]
+                  }
+                }, {
+                  "name" : "p_string",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "p_int",
+                  "dataType" : {
+                    "type" : "Integer"
+                  }
+                }, {
+                  "name" : "dbt_scd_id",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "dbt_updated_at",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                }, {
+                  "name" : "dbt_valid_from",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                }, {
+                  "name" : "dbt_valid_to",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                } ]
+              },
+              "slug" : "out"
+            } ],
+            "isCustomOutputSchema" : false,
+            "autoUpdateOnRun" : false
+          }
+        },
+        "63v2x0BIRLc9xP4sV-NV-$$z0zcQQGMzcJKDfH3u5Ice" : {
+          "id" : "63v2x0BIRLc9xP4sV-NV-$$z0zcQQGMzcJKDfH3u5Ice",
+          "component" : "Join",
+          "metadata" : {
+            "label" : "Join_1",
+            "slug" : "Join_1",
+            "x" : 820,
+            "y" : 120,
+            "phase" : 0,
+            "macroDependencies" : [ ],
+            "comment" : "Combines updated records with relevant historical data for comparison.",
+            "autoUpdateComment" : true
+          },
+          "properties" : {
+            "conditions" : [ {
+              "alias" : "in1",
+              "expression" : {
+                "expression" : "in1.dbt_updated_at >= in0.newdbt_value"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "in0.dbt_updated_at"
+              },
+              "alias" : "dbt_updated_at"
+            }, {
+              "expression" : {
+                "expression" : "in1.dbt_scd_id"
+              },
+              "alias" : "dbt_scd_id"
+            }, {
+              "expression" : {
+                "expression" : "in1.dbt_valid_from"
+              },
+              "alias" : "dbt_valid_from"
+            }, {
+              "expression" : {
+                "expression" : "in1.dbt_valid_to"
+              },
+              "alias" : "dbt_valid_to"
+            }, {
+              "expression" : {
+                "expression" : "in0.newdbt_value"
+              },
+              "alias" : "newdbt_value"
+            } ],
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "oi-7gpl3L0fSzUjIRcvHk$$dwNK_P5MzM40T4G_4zF5U##dbt_updated_at", "_HJ8j3kqZ3JzKPQfL8jfh$$FhlrLizMGjl7FDMaID6xz##newdbt_value", "_HJ8j3kqZ3JzKPQfL8jfh$$FhlrLizMGjl7FDMaID6xz##dbt_updated_at", "oi-7gpl3L0fSzUjIRcvHk$$dwNK_P5MzM40T4G_4zF5U##dbt_scd_id", "oi-7gpl3L0fSzUjIRcvHk$$dwNK_P5MzM40T4G_4zF5U##dbt_valid_from", "oi-7gpl3L0fSzUjIRcvHk$$dwNK_P5MzM40T4G_4zF5U##dbt_valid_to", "_HJ8j3kqZ3JzKPQfL8jfh$$FhlrLizMGjl7FDMaID6xz##newdbt_value" ],
+            "headAlias" : "in0"
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "_HJ8j3kqZ3JzKPQfL8jfh$$FhlrLizMGjl7FDMaID6xz",
+              "schema" : {
+                "entityType" : "",
+                "providerType" : "Databricks",
+                "fields" : [ {
+                  "name" : "dbt_updated_at",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                }, {
+                  "name" : "newdbt_value",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                }, {
+                  "name" : "dbt_valid_to",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                }, {
+                  "name" : "dbt_scd_id",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                } ]
+              },
+              "slug" : "in0"
+            }, {
+              "id" : "oi-7gpl3L0fSzUjIRcvHk$$dwNK_P5MzM40T4G_4zF5U",
+              "schema" : {
+                "entityType" : "",
+                "providerType" : "Databricks",
+                "fields" : [ {
+                  "name" : "c_tinyint",
+                  "dataType" : {
+                    "type" : "TinyInt"
+                  }
+                }, {
+                  "name" : "c_smallint",
+                  "dataType" : {
+                    "type" : "SmallInt"
+                  }
+                }, {
+                  "name" : "c_int",
+                  "dataType" : {
+                    "type" : "Integer"
+                  }
+                }, {
+                  "name" : "c_bigint",
+                  "dataType" : {
+                    "type" : "Bigint"
+                  }
+                }, {
+                  "name" : "c_float",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                }, {
+                  "name" : "c_double",
+                  "dataType" : {
+                    "type" : "Double"
+                  }
+                }, {
+                  "name" : "c_string",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "c_boolean",
+                  "dataType" : {
+                    "type" : "Boolean"
+                  }
+                }, {
+                  "name" : "c_date",
+                  "dataType" : {
+                    "type" : "Date"
+                  }
+                }, {
+                  "name" : "c_timestamp",
+                  "dataType" : {
+                    "type" : "Timestamp"
+                  }
+                }, {
+                  "name" : "c_binary",
+                  "dataType" : {
+                    "type" : "Binary"
+                  }
+                }, {
+                  "name" : "c_decimal",
+                  "dataType" : {
+                    "type" : "Decimal"
+                  }
+                }, {
+                  "name" : "c_array",
+                  "dataType" : {
+                    "type" : "Array",
+                    "dataType" : {
+                      "type" : "String"
+                    }
+                  }
+                }, {
+                  "name" : "c_array_struct",
+                  "dataType" : {
+                    "type" : "Array",
+                    "dataType" : {
+                      "type" : "Struct",
+                      "fields" : [ {
+                        "name" : "city",
+                        "dataType" : {
+                          "type" : "String"
+                        }
+                      }, {
+                        "name" : "state",
+                        "dataType" : {
+                          "type" : "String"
+                        }
+                      }, {
+                        "name" : "pin",
+                        "dataType" : {
+                          "type" : "Bigint"
+                        }
+                      }, {
+                        "name" : "start_date",
+                        "dataType" : {
+                          "type" : "Date"
+                        }
+                      }, {
+                        "name" : "is_available",
+                        "dataType" : {
+                          "type" : "Boolean"
+                        }
+                      }, {
+                        "name" : "yearlyrates",
+                        "dataType" : {
+                          "type" : "Array",
+                          "dataType" : {
+                            "type" : "Integer"
+                          }
+                        }
+                      }, {
+                        "name" : "roomsizes",
+                        "dataType" : {
+                          "type" : "Struct",
+                          "fields" : [ {
+                            "name" : "r_name",
+                            "dataType" : {
+                              "type" : "String"
+                            }
+                          }, {
+                            "name" : "size",
+                            "dataType" : {
+                              "type" : "Integer"
+                            }
+                          } ]
+                        }
+                      } ]
+                    }
+                  }
+                }, {
+                  "name" : "c_map",
+                  "dataType" : {
+                    "type" : "Map",
+                    "keyType" : {
+                      "type" : "String"
+                    },
+                    "valueType" : {
+                      "type" : "Integer"
+                    }
+                  }
+                }, {
+                  "name" : "c_struct",
+                  "dataType" : {
+                    "type" : "Struct",
+                    "fields" : [ {
+                      "name" : "city",
+                      "dataType" : {
+                        "type" : "String"
+                      }
+                    }, {
+                      "name" : "state",
+                      "dataType" : {
+                        "type" : "String"
+                      }
+                    }, {
+                      "name" : "pin",
+                      "dataType" : {
+                        "type" : "Bigint"
+                      }
+                    }, {
+                      "name" : "start_date",
+                      "dataType" : {
+                        "type" : "Date"
+                      }
+                    }, {
+                      "name" : "is_available",
+                      "dataType" : {
+                        "type" : "Boolean"
+                      }
+                    }, {
+                      "name" : "yearlyrates",
+                      "dataType" : {
+                        "type" : "Array",
+                        "dataType" : {
+                          "type" : "Integer"
+                        }
+                      }
+                    }, {
+                      "name" : "roomsizes",
+                      "dataType" : {
+                        "type" : "Struct",
+                        "fields" : [ {
+                          "name" : "r_name",
+                          "dataType" : {
+                            "type" : "String"
+                          }
+                        }, {
+                          "name" : "size",
+                          "dataType" : {
+                            "type" : "Integer"
+                          }
+                        } ]
+                      }
+                    } ]
+                  }
+                }, {
+                  "name" : "p_string",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "p_int",
+                  "dataType" : {
+                    "type" : "Integer"
+                  }
+                }, {
+                  "name" : "dbt_scd_id",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "dbt_updated_at",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                }, {
+                  "name" : "dbt_valid_from",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                }, {
+                  "name" : "dbt_valid_to",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                } ]
+              },
+              "slug" : "in1"
+            } ],
+            "outputs" : [ {
+              "id" : "9nQYp-XgXO8BGkUiailLq$$wR-J62ZwgiSOccKrm7HrG",
+              "schema" : {
+                "entityType" : "",
+                "providerType" : "Databricks",
+                "fields" : [ {
+                  "name" : "dbt_updated_at",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                }, {
+                  "name" : "dbt_scd_id",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "dbt_valid_from",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                }, {
+                  "name" : "dbt_valid_to",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                }, {
+                  "name" : "newdbt_value",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                } ]
+              },
+              "slug" : "out"
+            } ],
+            "isCustomOutputSchema" : false,
+            "autoUpdateOnRun" : false
+          }
+        },
+        "u4r-MeGP8I1Rph3P_AoMy$$Mqe0RfEAj1Lyx0Hai57CA" : {
+          "id" : "u4r-MeGP8I1Rph3P_AoMy$$Mqe0RfEAj1Lyx0Hai57CA",
+          "component" : "Reformat",
+          "metadata" : {
+            "label" : "Reformat_1",
+            "slug" : "Reformat_1",
+            "x" : 420,
+            "y" : 20,
+            "phase" : 0,
+            "macroDependencies" : [ ],
+            "comment" : "Transforms data to include updated timestamps and a new calculated value for further analysis.",
+            "autoUpdateComment" : true
+          },
+          "properties" : {
+            "columnsSelector" : [ "lv77A0yBavT08e20hOEb9$$LH8mpnSqlD-Dee71n3Y4n##dbt_updated_at", "lv77A0yBavT08e20hOEb9$$LH8mpnSqlD-Dee71n3Y4n##dbt_valid_from", "lv77A0yBavT08e20hOEb9$$LH8mpnSqlD-Dee71n3Y4n##dbt_valid_to", "lv77A0yBavT08e20hOEb9$$LH8mpnSqlD-Dee71n3Y4n##dbt_scd_id" ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "dbt_updated_at"
+              },
+              "alias" : "dbt_updated_at"
+            }, {
+              "expression" : {
+                "expression" : "dbt_valid_from % 2"
+              },
+              "alias" : "newdbt_value"
+            }, {
+              "expression" : {
+                "expression" : "dbt_valid_to"
+              },
+              "alias" : "dbt_valid_to"
+            }, {
+              "expression" : {
+                "expression" : "dbt_scd_id"
+              },
+              "alias" : "dbt_scd_id"
+            } ]
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "lv77A0yBavT08e20hOEb9$$LH8mpnSqlD-Dee71n3Y4n",
+              "schema" : {
+                "entityType" : "",
+                "providerType" : "Databricks",
+                "fields" : [ {
+                  "name" : "c_tinyint",
+                  "dataType" : {
+                    "type" : "TinyInt"
+                  }
+                }, {
+                  "name" : "c_smallint",
+                  "dataType" : {
+                    "type" : "SmallInt"
+                  }
+                }, {
+                  "name" : "c_int",
+                  "dataType" : {
+                    "type" : "Integer"
+                  }
+                }, {
+                  "name" : "c_bigint",
+                  "dataType" : {
+                    "type" : "Bigint"
+                  }
+                }, {
+                  "name" : "c_float",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                }, {
+                  "name" : "c_double",
+                  "dataType" : {
+                    "type" : "Double"
+                  }
+                }, {
+                  "name" : "c_string",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "c_boolean",
+                  "dataType" : {
+                    "type" : "Boolean"
+                  }
+                }, {
+                  "name" : "c_date",
+                  "dataType" : {
+                    "type" : "Date"
+                  }
+                }, {
+                  "name" : "c_timestamp",
+                  "dataType" : {
+                    "type" : "Timestamp"
+                  }
+                }, {
+                  "name" : "c_binary",
+                  "dataType" : {
+                    "type" : "Binary"
+                  }
+                }, {
+                  "name" : "c_decimal",
+                  "dataType" : {
+                    "type" : "Decimal"
+                  }
+                }, {
+                  "name" : "c_array",
+                  "dataType" : {
+                    "type" : "Array",
+                    "dataType" : {
+                      "type" : "String"
+                    }
+                  }
+                }, {
+                  "name" : "c_array_struct",
+                  "dataType" : {
+                    "type" : "Array",
+                    "dataType" : {
+                      "type" : "Struct",
+                      "fields" : [ {
+                        "name" : "city",
+                        "dataType" : {
+                          "type" : "String"
+                        }
+                      }, {
+                        "name" : "state",
+                        "dataType" : {
+                          "type" : "String"
+                        }
+                      }, {
+                        "name" : "pin",
+                        "dataType" : {
+                          "type" : "Bigint"
+                        }
+                      }, {
+                        "name" : "start_date",
+                        "dataType" : {
+                          "type" : "Date"
+                        }
+                      }, {
+                        "name" : "is_available",
+                        "dataType" : {
+                          "type" : "Boolean"
+                        }
+                      }, {
+                        "name" : "yearlyrates",
+                        "dataType" : {
+                          "type" : "Array",
+                          "dataType" : {
+                            "type" : "Integer"
+                          }
+                        }
+                      }, {
+                        "name" : "roomsizes",
+                        "dataType" : {
+                          "type" : "Struct",
+                          "fields" : [ {
+                            "name" : "r_name",
+                            "dataType" : {
+                              "type" : "String"
+                            }
+                          }, {
+                            "name" : "size",
+                            "dataType" : {
+                              "type" : "Integer"
+                            }
+                          } ]
+                        }
+                      } ]
+                    }
+                  }
+                }, {
+                  "name" : "c_map",
+                  "dataType" : {
+                    "type" : "Map",
+                    "keyType" : {
+                      "type" : "String"
+                    },
+                    "valueType" : {
+                      "type" : "Integer"
+                    }
+                  }
+                }, {
+                  "name" : "c_struct",
+                  "dataType" : {
+                    "type" : "Struct",
+                    "fields" : [ {
+                      "name" : "city",
+                      "dataType" : {
+                        "type" : "String"
+                      }
+                    }, {
+                      "name" : "state",
+                      "dataType" : {
+                        "type" : "String"
+                      }
+                    }, {
+                      "name" : "pin",
+                      "dataType" : {
+                        "type" : "Bigint"
+                      }
+                    }, {
+                      "name" : "start_date",
+                      "dataType" : {
+                        "type" : "Date"
+                      }
+                    }, {
+                      "name" : "is_available",
+                      "dataType" : {
+                        "type" : "Boolean"
+                      }
+                    }, {
+                      "name" : "yearlyrates",
+                      "dataType" : {
+                        "type" : "Array",
+                        "dataType" : {
+                          "type" : "Integer"
+                        }
+                      }
+                    }, {
+                      "name" : "roomsizes",
+                      "dataType" : {
+                        "type" : "Struct",
+                        "fields" : [ {
+                          "name" : "r_name",
+                          "dataType" : {
+                            "type" : "String"
+                          }
+                        }, {
+                          "name" : "size",
+                          "dataType" : {
+                            "type" : "Integer"
+                          }
+                        } ]
+                      }
+                    } ]
+                  }
+                }, {
+                  "name" : "p_string",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "p_int",
+                  "dataType" : {
+                    "type" : "Integer"
+                  }
+                }, {
+                  "name" : "dbt_scd_id",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "dbt_updated_at",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                }, {
+                  "name" : "dbt_valid_from",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                }, {
+                  "name" : "dbt_valid_to",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                } ]
+              },
+              "slug" : "in0"
+            } ],
+            "outputs" : [ {
+              "id" : "NuURb-wNUDSqs0fMARjkv$$MgwwOF8VbirqnLOIAOKLr",
+              "schema" : {
+                "entityType" : "",
+                "providerType" : "Databricks",
+                "fields" : [ {
+                  "name" : "dbt_updated_at",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                }, {
+                  "name" : "newdbt_value",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                }, {
+                  "name" : "dbt_valid_to",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                }, {
+                  "name" : "dbt_scd_id",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                } ]
+              },
+              "slug" : "out"
+            } ],
+            "isCustomOutputSchema" : false,
+            "autoUpdateOnRun" : false
+          }
+        },
+        "bpFS6oDcl_eumnIpqPRG-" : {
+          "id" : "bpFS6oDcl_eumnIpqPRG-",
+          "component" : "Snapshot",
+          "metadata" : {
+            "label" : "mod6_1",
+            "slug" : "mod6_1",
+            "x" : 620,
+            "y" : 220,
+            "phase" : 0
+          },
+          "properties" : {
+            "table" : {
+              "name" : "mod6",
+              "sourceType" : "Snapshot",
+              "alias" : ""
+            }
+          },
+          "ports" : {
+            "inputs" : [ ],
+            "outputs" : [ {
+              "id" : "kjhTe_19irg8zF-mJtxfM",
+              "schema" : {
+                "entityType" : "",
+                "providerType" : "Databricks",
+                "fields" : [ {
+                  "name" : "c_tinyint",
+                  "dataType" : {
+                    "type" : "TinyInt"
+                  }
+                }, {
+                  "name" : "c_smallint",
+                  "dataType" : {
+                    "type" : "SmallInt"
+                  }
+                }, {
+                  "name" : "c_int",
+                  "dataType" : {
+                    "type" : "Integer"
+                  }
+                }, {
+                  "name" : "c_bigint",
+                  "dataType" : {
+                    "type" : "Bigint"
+                  }
+                }, {
+                  "name" : "c_float",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                }, {
+                  "name" : "c_double",
+                  "dataType" : {
+                    "type" : "Double"
+                  }
+                }, {
+                  "name" : "c_string",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "c_boolean",
+                  "dataType" : {
+                    "type" : "Boolean"
+                  }
+                }, {
+                  "name" : "c_date",
+                  "dataType" : {
+                    "type" : "Date"
+                  }
+                }, {
+                  "name" : "c_timestamp",
+                  "dataType" : {
+                    "type" : "Timestamp"
+                  }
+                }, {
+                  "name" : "c_binary",
+                  "dataType" : {
+                    "type" : "Binary"
+                  }
+                }, {
+                  "name" : "c_decimal",
+                  "dataType" : {
+                    "type" : "Decimal"
+                  }
+                }, {
+                  "name" : "c_array",
+                  "dataType" : {
+                    "type" : "Array",
+                    "dataType" : {
+                      "type" : "String"
+                    }
+                  }
+                }, {
+                  "name" : "c_array_struct",
+                  "dataType" : {
+                    "type" : "Array",
+                    "dataType" : {
+                      "type" : "Struct",
+                      "fields" : [ {
+                        "name" : "city",
+                        "dataType" : {
+                          "type" : "String"
+                        }
+                      }, {
+                        "name" : "state",
+                        "dataType" : {
+                          "type" : "String"
+                        }
+                      }, {
+                        "name" : "pin",
+                        "dataType" : {
+                          "type" : "Bigint"
+                        }
+                      }, {
+                        "name" : "start_date",
+                        "dataType" : {
+                          "type" : "Date"
+                        }
+                      }, {
+                        "name" : "is_available",
+                        "dataType" : {
+                          "type" : "Boolean"
+                        }
+                      }, {
+                        "name" : "yearlyrates",
+                        "dataType" : {
+                          "type" : "Array",
+                          "dataType" : {
+                            "type" : "Integer"
+                          }
+                        }
+                      }, {
+                        "name" : "roomsizes",
+                        "dataType" : {
+                          "type" : "Struct",
+                          "fields" : [ {
+                            "name" : "r_name",
+                            "dataType" : {
+                              "type" : "String"
+                            }
+                          }, {
+                            "name" : "size",
+                            "dataType" : {
+                              "type" : "Integer"
+                            }
+                          } ]
+                        }
+                      } ]
+                    }
+                  }
+                }, {
+                  "name" : "c_map",
+                  "dataType" : {
+                    "type" : "Map",
+                    "keyType" : {
+                      "type" : "String"
+                    },
+                    "valueType" : {
+                      "type" : "Integer"
+                    }
+                  }
+                }, {
+                  "name" : "c_struct",
+                  "dataType" : {
+                    "type" : "Struct",
+                    "fields" : [ {
+                      "name" : "city",
+                      "dataType" : {
+                        "type" : "String"
+                      }
+                    }, {
+                      "name" : "state",
+                      "dataType" : {
+                        "type" : "String"
+                      }
+                    }, {
+                      "name" : "pin",
+                      "dataType" : {
+                        "type" : "Bigint"
+                      }
+                    }, {
+                      "name" : "start_date",
+                      "dataType" : {
+                        "type" : "Date"
+                      }
+                    }, {
+                      "name" : "is_available",
+                      "dataType" : {
+                        "type" : "Boolean"
+                      }
+                    }, {
+                      "name" : "yearlyrates",
+                      "dataType" : {
+                        "type" : "Array",
+                        "dataType" : {
+                          "type" : "Integer"
+                        }
+                      }
+                    }, {
+                      "name" : "roomsizes",
+                      "dataType" : {
+                        "type" : "Struct",
+                        "fields" : [ {
+                          "name" : "r_name",
+                          "dataType" : {
+                            "type" : "String"
+                          }
+                        }, {
+                          "name" : "size",
+                          "dataType" : {
+                            "type" : "Integer"
+                          }
+                        } ]
+                      }
+                    } ]
+                  }
+                }, {
+                  "name" : "p_string",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "p_int",
+                  "dataType" : {
+                    "type" : "Integer"
+                  }
+                }, {
+                  "name" : "dbt_scd_id",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "dbt_updated_at",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                }, {
+                  "name" : "dbt_valid_from",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                }, {
+                  "name" : "dbt_valid_to",
+                  "dataType" : {
+                    "type" : "Float"
+                  }
+                } ]
+              },
+              "slug" : "out"
+            } ],
+            "isCustomOutputSchema" : false,
+            "autoUpdateOnRun" : false
+          }
+        }
+      },
+      "connections" : [ {
+        "id" : "VHBBzxcFxvEFZlJ9kDXzu",
+        "source" : "S98q9nBqprTNVSmjEgDRv$$T6qaoVEEU92b4h00-X_rO",
+        "sourcePort" : "aGDBnmnga5PeIZy4zTD-3$$t2wZ6ypE_qIiRcP9UY8Gs",
+        "target" : "PYXRtXJzTAGiNDS5VuAl6$$Br4GvX2vL9RRpWN49MaKn",
+        "targetPort" : "H6zgpxwc6wgEPq3mXkwx7$$K2NVHndC8UGk9V0nzTr4f"
+      }, {
+        "id" : "5A_ui_KiHIUOlNGCPq4Jq",
+        "source" : "PYXRtXJzTAGiNDS5VuAl6$$Br4GvX2vL9RRpWN49MaKn",
+        "sourcePort" : "Tqy7vt8HS7lf5NA8RUgQi$$1Cena0vVx9kOqHHhUwOR3",
+        "target" : "u4r-MeGP8I1Rph3P_AoMy$$Mqe0RfEAj1Lyx0Hai57CA",
+        "targetPort" : "lv77A0yBavT08e20hOEb9$$LH8mpnSqlD-Dee71n3Y4n"
+      }, {
+        "id" : "SESIQOH5Kwo36kDPfPM5W",
+        "source" : "u4r-MeGP8I1Rph3P_AoMy$$Mqe0RfEAj1Lyx0Hai57CA",
+        "sourcePort" : "NuURb-wNUDSqs0fMARjkv$$MgwwOF8VbirqnLOIAOKLr",
+        "target" : "c6Ew2kFHXT4in8sG-nnOf$$HkwbVe_Y0JlUMIhrsv_3c",
+        "targetPort" : "BPf17b16-bpk4jZV6UnZj$$xOVdHdmARu6fAjWBJ2D1T"
+      }, {
+        "id" : "Y6_Q2bz23glqvF1iQrt79",
+        "source" : "c6Ew2kFHXT4in8sG-nnOf$$HkwbVe_Y0JlUMIhrsv_3c",
+        "sourcePort" : "FoSAFI7rX9w9tLnodolRN$$vSt8Yv0OtEV27CjlUzi1R",
+        "target" : "63v2x0BIRLc9xP4sV-NV-$$z0zcQQGMzcJKDfH3u5Ice",
+        "targetPort" : "_HJ8j3kqZ3JzKPQfL8jfh$$FhlrLizMGjl7FDMaID6xz"
+      }, {
+        "id" : "K9TSHe5aYVY6yPBEfkTTR",
+        "source" : "63v2x0BIRLc9xP4sV-NV-$$z0zcQQGMzcJKDfH3u5Ice",
+        "sourcePort" : "9nQYp-XgXO8BGkUiailLq$$wR-J62ZwgiSOccKrm7HrG",
+        "target" : "hOsWMOr6fZdkqWfmGUkyi$$fIZQkaJCnm5vJkwjE4gwD",
+        "targetPort" : "VHrY846G4EPn3b1Tb7Bwi$$bsagV3KVTcLULLEL1kgxz"
+      }, {
+        "id" : "OGSNdlGXpDJY7aT0mqQDJ",
+        "source" : "hOsWMOr6fZdkqWfmGUkyi$$fIZQkaJCnm5vJkwjE4gwD",
+        "sourcePort" : "cb1pi92Go5TN_bRSjPD4I$$GAOf2ytsBg9N5TocpcwX9",
+        "target" : "S98q9nBqprTNVSmjEgDRv$$T6qaoVEEU92b4h00-X_rO",
+        "targetPort" : "AFQAnjPPCPalpPssqUFGa$$CJ6WCrTD4IAnx0VfIIuDE"
+      }, {
+        "id" : "mYvEzIsZlNggb0c3YUkfC",
+        "source" : "bpFS6oDcl_eumnIpqPRG-",
+        "sourcePort" : "kjhTe_19irg8zF-mJtxfM",
+        "target" : "63v2x0BIRLc9xP4sV-NV-$$z0zcQQGMzcJKDfH3u5Ice",
+        "targetPort" : "oi-7gpl3L0fSzUjIRcvHk$$dwNK_P5MzM40T4G_4zF5U"
+      } ],
+      "ports" : {
+        "inputs" : [ {
+          "id" : "cb1pi92Go5TN_bRSjPD4I$$GAOf2ytsBg9N5TocpcwX9",
+          "slug" : "mod6"
+        } ],
+        "outputs" : [ {
+          "id" : "VHrY846G4EPn3b1Tb7Bwi$$bsagV3KVTcLULLEL1kgxz",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : { },
+      "canonical" : false
+    }
+  },
+  "connections" : [ {
+    "id" : "QMu_hYM4DzNHabmvPM_xO",
+    "source" : "hFis4F42I1cywBiWROVyC",
+    "sourcePort" : "rLknIM4KruzWp846117dC",
+    "target" : "hOsWMOr6fZdkqWfmGUkyi$$fIZQkaJCnm5vJkwjE4gwD",
+    "targetPort" : "cb1pi92Go5TN_bRSjPD4I$$GAOf2ytsBg9N5TocpcwX9"
+  }, {
+    "id" : "9wtfHH5qDc3Bx5QPVFZlQ",
+    "source" : "hOsWMOr6fZdkqWfmGUkyi$$fIZQkaJCnm5vJkwjE4gwD",
+    "sourcePort" : "VHrY846G4EPn3b1Tb7Bwi$$bsagV3KVTcLULLEL1kgxz",
+    "target" : "DeeperModel##bTX2RssS",
+    "targetPort" : "A4cxlN9m"
+  } ],
+  "component" : "Model"
+}

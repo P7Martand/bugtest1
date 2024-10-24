@@ -1,0 +1,94 @@
+{
+  "id" : "mod4",
+  "metainfo" : {
+    "label" : "mod4",
+    "autoLayout" : false,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "strategy" : "\"timestamp\"",
+        "updated_at" : "\"c_float\"",
+        "target_schema" : "\"qa_db_warehouse\"",
+        "unique_key" : "\"c_int\"",
+        "type" : "SnapshotConfig"
+      }
+    },
+    "version" : 0
+  },
+  "processes" : {
+    "mod4##bbixMx16" : {
+      "id" : "mod4##bbixMx16",
+      "component" : "TargetSnapshot",
+      "metadata" : {
+        "label" : "mod4",
+        "x" : 20,
+        "y" : 20,
+        "phase" : 0,
+        "macroDependencies" : [ ],
+        "comment" : "Retrieves all records from the default table for comprehensive analysis.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT * \n\nFROM all_type_table_default\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "RFwD3d5l",
+          "slug" : "all_type_table_default"
+        } ],
+        "outputs" : [ {
+          "id" : "xtqCNiBO",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "joSAu2k26ytTczSrAT2lq" : {
+      "id" : "joSAu2k26ytTczSrAT2lq",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "all_type_table_default",
+        "slug" : "all_type_table_default",
+        "x" : -720,
+        "y" : -280,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "all_type_table_default",
+          "sourceType" : "Source",
+          "sourceName" : "hive_metastore.qa_db_warehouse",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "1z_va1ydOql7BBneRMj-G",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "STTxK860I9NvAUeSeSphP",
+    "source" : "joSAu2k26ytTczSrAT2lq",
+    "sourcePort" : "1z_va1ydOql7BBneRMj-G",
+    "target" : "mod4##bbixMx16",
+    "targetPort" : "RFwD3d5l"
+  } ],
+  "component" : "Snapshot"
+}
