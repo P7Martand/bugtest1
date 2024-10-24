@@ -10,8 +10,8 @@
     "graphConfig" : {
       "entityConfig" : {
         "strategy" : "'check'",
-        "check_cols" : [ "\"c_boolean\"" ],
         "updated_at" : "",
+        "check_cols" : [ "\"c_boolean\"" ],
         "unique_key" : "\"c_float\"",
         "type" : "SnapshotConfig"
       }
